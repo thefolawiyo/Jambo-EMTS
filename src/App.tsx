@@ -10,6 +10,7 @@ import { FaqsSection } from './components/FaqsSection';
 import { FooterSection } from './components/FooterSection';
 import { ExploreEventsPage } from './components/ExploreEventsPage';
 import { EventDetailsPage } from './components/EventDetailsPage';
+import { SelectAccountTypePage } from './components/SelectAccountTypePage';
 import { ActionModal, TicketModal } from './components/Modals';
 import {
   EXPLORE_ALL_EVENTS,
@@ -19,7 +20,7 @@ import {
   type EventItem,
 } from './data/jamboData';
 
-type PageRoute = 'home' | 'explore' | 'event-details';
+type PageRoute = 'home' | 'explore' | 'event-details' | 'get-started';
 
 const ALL_CATALOG_EVENTS: EventItem[] = [...SPOTLIGHT_EVENTS, ...EXPLORE_ALL_EVENTS];
 
@@ -29,6 +30,9 @@ function findEventById(id: string): EventItem | null {
 
 function getInitialRoute(): { page: PageRoute; event: EventItem | null } {
   const hash = window.location.hash;
+  if (hash === '#/get-started') {
+    return { page: 'get-started', event: null };
+  }
   if (hash.startsWith('#/event/')) {
     const id = hash.slice('#/event/'.length);
     const found = findEventById(id);
@@ -43,7 +47,7 @@ function getInitialRoute(): { page: PageRoute; event: EventItem | null } {
 export default function App() {
   const initial = getInitialRoute();
   const [page, setPage] = useState<PageRoute>(initial.page);
-  const [previousPage, setPreviousPage] = useState<'home' | 'explore'>('home');
+  const [previousPage, setPreviousPage] = useState<'home' | 'explore' | 'event-details'>('home');
   const [activeEvent, setActiveEvent] = useState<EventItem | null>(initial.event);
   const [activeDetailsVariant, setActiveDetailsVariant] = useState<EventDetailsVariantId>(() =>
     initial.event?.detailsVariant ?? getRandomEventDetailsVariant(),
@@ -89,6 +93,17 @@ export default function App() {
     }
   };
 
+  const navigateToGetStarted = () => {
+    if (page !== 'get-started') {
+      setPreviousPage(page);
+    }
+    if (window.location.hash !== '#/get-started') {
+      window.location.hash = '#/get-started';
+    }
+    setPage('get-started');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const openEventDetails = (evt: EventItem) => {
     if (page === 'home' || page === 'explore') {
       setPreviousPage(page);
@@ -109,20 +124,37 @@ export default function App() {
     }
   };
 
+  const handleBackFromGetStarted = () => {
+    if (previousPage === 'explore') {
+      navigateToExplore();
+    } else if (previousPage === 'event-details' && activeEvent) {
+      window.location.hash = `#/event/${activeEvent.id}`;
+      setPage('event-details');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigateToHome();
+    }
+  };
+
   const handleSearchSubmit = () => {
     navigateToExplore();
   };
 
   return (
     <div className="min-h-screen bg-white text-[#2e2e2e]">
-      {page === 'event-details' && activeEvent ? (
+      {page === 'get-started' ? (
+        <SelectAccountTypePage
+          onBack={handleBackFromGetStarted}
+          onSignIn={() => setActionModal('signin')}
+        />
+      ) : page === 'event-details' && activeEvent ? (
         <EventDetailsPage
           event={activeEvent}
           variant={activeDetailsVariant}
           onBack={handleBackFromEvent}
           onNavigateHome={navigateToHome}
           onNavigateExplore={navigateToExplore}
-          onOpenCreateModal={() => setActionModal('create')}
+          onOpenCreateModal={navigateToGetStarted}
           onOpenSignInModal={() => setActionModal('signin')}
           onGetTicket={(evt) => setTicketModalEvent(evt)}
         />
@@ -132,7 +164,7 @@ export default function App() {
           initialScope={selectedScope}
           onNavigateHome={navigateToHome}
           onNavigateExplore={navigateToExplore}
-          onOpenCreateModal={() => setActionModal('create')}
+          onOpenCreateModal={navigateToGetStarted}
           onOpenSignInModal={() => setActionModal('signin')}
           onSelectEvent={openEventDetails}
         />
@@ -146,7 +178,7 @@ export default function App() {
             onSearchSubmit={handleSearchSubmit}
             onNavigateHome={navigateToHome}
             onNavigateExplore={navigateToExplore}
-            onOpenCreateModal={() => setActionModal('create')}
+            onOpenCreateModal={navigateToGetStarted}
             onOpenSignInModal={() => setActionModal('signin')}
           />
 
@@ -166,7 +198,7 @@ export default function App() {
 
             <BuiltInNaijaSection />
 
-            <ProducersSection onOpenCreateModal={() => setActionModal('create')} />
+            <ProducersSection onOpenCreateModal={navigateToGetStarted} />
 
             <ToolkitBentoSection />
 
