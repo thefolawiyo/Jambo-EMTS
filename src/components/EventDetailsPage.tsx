@@ -13,6 +13,7 @@ interface EventDetailsPageProps {
   onBack: () => void;
   onNavigateHome: (sectionId?: string) => void;
   onNavigateExplore: () => void;
+  onNavigateAbout?: () => void;
   onOpenCreateModal: () => void;
   onOpenSignInModal: () => void;
   onGetTicket: (event: EventItem) => void;
@@ -140,6 +141,7 @@ export function EventDetailsPage({
   onBack,
   onNavigateHome,
   onNavigateExplore,
+  onNavigateAbout,
   onOpenCreateModal,
   onOpenSignInModal,
   onGetTicket,
@@ -213,6 +215,7 @@ export function EventDetailsPage({
         activePage="explore"
         onNavigateHome={onNavigateHome}
         onNavigateExplore={onNavigateExplore}
+        onNavigateAbout={onNavigateAbout}
         onOpenCreateModal={onOpenCreateModal}
         onOpenSignInModal={onOpenSignInModal}
       />
@@ -331,7 +334,7 @@ export function EventDetailsPage({
         </main>
       )}
 
-      <FooterSection />
+      <FooterSection onNavigateAbout={onNavigateAbout} />
     </div>
   );
 }

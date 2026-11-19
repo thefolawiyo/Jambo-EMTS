@@ -9,6 +9,7 @@ interface HeroSectionProps {
   onSearchSubmit: () => void;
   onNavigateHome: (sectionId?: string) => void;
   onNavigateExplore: () => void;
+  onNavigateAbout?: () => void;
   onOpenCreateModal: () => void;
   onOpenSignInModal: () => void;
 }
@@ -23,6 +24,7 @@ export function HeroSection({
   onSearchSubmit,
   onNavigateHome,
   onNavigateExplore,
+  onNavigateAbout,
   onOpenCreateModal,
   onOpenSignInModal,
 }: HeroSectionProps) {
@@ -68,6 +70,7 @@ export function HeroSection({
         activePage="home"
         onNavigateHome={onNavigateHome}
         onNavigateExplore={onNavigateExplore}
+        onNavigateAbout={onNavigateAbout}
         onOpenCreateModal={onOpenCreateModal}
         onOpenSignInModal={onOpenSignInModal}
       />

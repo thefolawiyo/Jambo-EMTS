@@ -11,7 +11,11 @@ const FOOTER_LINKS = [
   { label: 'Security', href: '#built-in-naija' },
 ];
 
-export function FooterSection() {
+interface FooterSectionProps {
+  onNavigateAbout?: () => void;
+}
+
+export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [inView, setInView] = useState(false);
@@ -199,18 +203,29 @@ export function FooterSection() {
           <img src="/assets/f579f.svg" alt="" className="mb-10 w-full" />
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-              {FOOTER_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="flex items-center gap-2 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
-                >
-                  <span>{link.label}</span>
-                  {link.hasChevron && (
-                    <img src="/assets/ce1e2.svg" alt="" className="size-4 opacity-70" />
-                  )}
-                </a>
-              ))}
+              {FOOTER_LINKS.map((link) =>
+                link.label === 'About' && onNavigateAbout ? (
+                  <button
+                    key={link.label}
+                    type="button"
+                    onClick={onNavigateAbout}
+                    className="flex cursor-pointer items-center gap-2 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
+                  >
+                    <span>{link.label}</span>
+                  </button>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="flex items-center gap-2 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
+                  >
+                    <span>{link.label}</span>
+                    {link.hasChevron && (
+                      <img src="/assets/ce1e2.svg" alt="" className="size-4 opacity-70" />
+                    )}
+                  </a>
+                ),
+              )}
             </nav>
 
             <p className="text-[14px] font-medium leading-[20px] text-[#807e7e]">

@@ -14,6 +14,7 @@ interface ExploreEventsPageProps {
   featuredEvents?: EventItem[];
   onNavigateHome: (sectionId?: string) => void;
   onNavigateExplore: () => void;
+  onNavigateAbout?: () => void;
   onOpenCreateModal: () => void;
   onOpenSignInModal: () => void;
   onSelectEvent: (event: EventItem) => void;
@@ -40,6 +41,7 @@ export function ExploreEventsPage({
   featuredEvents = SPOTLIGHT_EVENTS,
   onNavigateHome,
   onNavigateExplore,
+  onNavigateAbout,
   onOpenCreateModal,
   onOpenSignInModal,
   onSelectEvent,
@@ -152,6 +154,7 @@ export function ExploreEventsPage({
         activePage="explore"
         onNavigateHome={onNavigateHome}
         onNavigateExplore={onNavigateExplore}
+        onNavigateAbout={onNavigateAbout}
         onOpenCreateModal={onOpenCreateModal}
         onOpenSignInModal={onOpenSignInModal}
       />
@@ -754,7 +757,7 @@ export function ExploreEventsPage({
         )}
       </main>
 
-      <FooterSection />
+      <FooterSection onNavigateAbout={onNavigateAbout} />
     </div>
   );
 }
