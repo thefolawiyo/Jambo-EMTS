@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #2e2e2e;
+  --muted: #807e7e;
+  --hairline: #e7e5e5;
+  --hairline-strong: #d4d2d2;
+  --surface: #ffffff;
+  --surface-muted: #f4f3f3;
+  --orange-500: #ff5200;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background-color: var(--surface);
+  }
+}
+
+.font-serif-display {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn-jambo-primary {
+  background-image: linear-gradient(17deg, rgb(255, 122, 51) 14.644%, rgb(240, 62, 46) 85.356%);
+  transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn-jambo-primary:hover {
+  filter: brightness(1.04);
+  box-shadow: 0 8px 20px -6px rgba(255, 82, 0, 0.35);
+}
+
+.btn-jambo-primary:active {
+  transform: translateY(1px);
+}
+
+/* Hide scrollbars on horizontal filter strip */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle float animation for hero cards */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Marquee animation for testimonials */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 42s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 46s linear infinite;
+}
+
+.marquee-wrapper:hover .animate-marquee-left,
+.marquee-wrapper:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
