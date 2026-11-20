@@ -1,15 +1,12 @@
 import { useState } from 'react';
 import {
+  CITIES,
   EXPLORE_ALL_EVENTS,
   SPOTLIGHT_EVENTS,
   type EventItem,
 } from '../data/jamboData';
 import { Navbar } from './Navbar';
 import { FooterSection } from './FooterSection';
-import {
-  ExploreFilterModals,
-  type ExploreFilterModalType,
-} from './ExploreFilterModals';
 
 interface ExploreEventsPageProps {
   initialSearchQuery?: string;
@@ -23,32 +20,20 @@ interface ExploreEventsPageProps {
   onSelectEvent: (event: EventItem) => void;
 }
 
-const PAGE_NUMBERS: Array<number | 'ellipsis'> = [1, 2, 3, 'ellipsis', 12, 13, 14];
+const SCOPE_OPTIONS = [
+  'All events',
+  'Concerts',
+  'Conferences',
+  'Festivals',
+  'Workshops',
+  'Networking',
+  'Technology',
+  'Community',
+];
 
-function matchesFigmaPriceRange(priceValue: number, selectedPrice: string): boolean {
-  switch (selectedPrice) {
-    case 'All prices':
-      return true;
-    case 'Free':
-      return priceValue === 0;
-    case '₦0 - ₦5,000':
-      return priceValue >= 0 && priceValue <= 5000;
-    case '₦5,000 - ₦10,000':
-      return priceValue >= 5000 && priceValue <= 10000;
-    case '₦10,000 - ₦50,000':
-      return priceValue >= 10000 && priceValue <= 50000;
-    case '₦50,000 - ₦100,000':
-      return priceValue >= 50000 && priceValue <= 100000;
-    case '₦100,000 - ₦150,000':
-      return priceValue >= 100000 && priceValue <= 150000;
-    case '₦150,000 - ₦200,000':
-      return priceValue >= 150000 && priceValue <= 200000;
-    case '₦200,000 upward':
-      return priceValue >= 200000;
-    default:
-      return true;
-  }
-}
+const PRICE_OPTIONS = ['All prices', 'Free', 'Under ₦20,000', '₦20,000+'];
+const DATE_OPTIONS = ['Any date', 'Today', 'This Weekend', 'Upcoming'];
+const PAGE_NUMBERS: Array<number | 'ellipsis'> = [1, 2, 3, 'ellipsis', 12, 13, 14];
 
 export function ExploreEventsPage({
   initialSearchQuery = '',
@@ -67,12 +52,14 @@ export function ExploreEventsPage({
   const [selectedPrice, setSelectedPrice] = useState('All prices');
   const [selectedDate, setSelectedDate] = useState('Any date');
 
-  const [openDropdown, setOpenDropdown] = useState<ExploreFilterModalType>(null);
+  const [openDropdown, setOpenDropdown] = useState<
+    null | 'scope' | 'location' | 'price' | 'date'
+  >(null);
 
   const [spotlightOffset, setSpotlightOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(3);
 
-  const toggleDropdown = (name: Exclude<ExploreFilterModalType, null>) => {
+  const toggleDropdown = (name: 'scope' | 'location' | 'price' | 'date') => {
     setOpenDropdown((prev) => (prev === name ? null : name));
   };
 
@@ -86,13 +73,18 @@ export function ExploreEventsPage({
     const matchesLocation =
       selectedLocation === 'All cities' || evt.city === selectedLocation;
 
-    const matchesPrice = matchesFigmaPriceRange(evt.priceValue, selectedPrice);
+    const matchesPrice =
+      selectedPrice === 'All prices' ||
+      (selectedPrice === 'Free' && evt.priceValue === 0) ||
+      (selectedPrice === 'Under ₦20,000' &&
+        evt.priceValue > 0 &&
+        evt.priceValue < 20000) ||
+      (selectedPrice === '₦20,000+' && evt.priceValue >= 20000);
 
     const matchesDate =
       selectedDate === 'Any date' ||
       selectedDate === 'Upcoming' ||
-      evt.categories.includes(selectedDate) ||
-      evt.date.toLowerCase().includes(selectedDate.split(',')[0].toLowerCase());
+      evt.categories.includes(selectedDate);
 
     const q = searchQuery.trim().toLowerCase();
     const matchesQuery =
@@ -175,7 +167,7 @@ export function ExploreEventsPage({
             <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-between">
               {/* Left Combined Search Bar (stacked on mobile, inline on sm+) */}
               <div className="flex w-full flex-col rounded-[12px] border-[0.5px] border-[#e7e5e5] bg-white sm:h-[48px] sm:flex-row sm:items-center sm:px-4 lg:max-w-[640px]">
-                {/* Scope / Categories Filter Trigger (Figma 153:1550) */}
+                {/* Scope Dropdown */}
                 <div className="relative shrink-0 border-b border-[#e7e5e5] sm:border-b-0">
                   <button
                     type="button"
@@ -196,6 +188,27 @@ export function ExploreEventsPage({
                       }`}
                     />
                   </button>
+                  {openDropdown === 'scope' && (
+                    <div className="absolute left-0 top-12 z-30 w-48 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg sm:top-10 sm:w-44">
+                      {SCOPE_OPTIONS.map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          onClick={() => {
+                            setSelectedScope(opt);
+                            setOpenDropdown(null);
+                          }}
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                            selectedScope === opt
+                              ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
+                              : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
+                          }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Vertical Divider (sm+) */}
@@ -216,7 +229,7 @@ export function ExploreEventsPage({
                 </div>
               </div>
 
-              {/* Right Filter Controls: Location, Price, Date (Figma 149:8605 / 151:1412 / 153:1584) */}
+              {/* Right Filter Controls: Location, Price, Date (balanced 3-col grid on mobile) */}
               <div className="grid grid-cols-[1.22fr_1fr_1fr] gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
                 {/* Location Filter */}
                 <div className="relative min-w-0">
@@ -243,6 +256,27 @@ export function ExploreEventsPage({
                       }`}
                     />
                   </button>
+                  {openDropdown === 'location' && (
+                    <div className="absolute left-0 top-13 z-30 w-44 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg sm:left-auto sm:right-0">
+                      {CITIES.map((city) => (
+                        <button
+                          key={city}
+                          type="button"
+                          onClick={() => {
+                            setSelectedLocation(city);
+                            setOpenDropdown(null);
+                          }}
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                            selectedLocation === city
+                              ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
+                              : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
+                          }`}
+                        >
+                          {city}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Price Filter */}
@@ -270,6 +304,27 @@ export function ExploreEventsPage({
                       }`}
                     />
                   </button>
+                  {openDropdown === 'price' && (
+                    <div className="absolute left-1/2 top-13 z-30 w-44 -translate-x-1/2 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg sm:left-auto sm:right-0 sm:translate-x-0">
+                      {PRICE_OPTIONS.map((price) => (
+                        <button
+                          key={price}
+                          type="button"
+                          onClick={() => {
+                            setSelectedPrice(price);
+                            setOpenDropdown(null);
+                          }}
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                            selectedPrice === price
+                              ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
+                              : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
+                          }`}
+                        >
+                          {price}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Date Filter */}
@@ -297,6 +352,27 @@ export function ExploreEventsPage({
                       }`}
                     />
                   </button>
+                  {openDropdown === 'date' && (
+                    <div className="absolute right-0 top-13 z-30 w-44 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg">
+                      {DATE_OPTIONS.map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          onClick={() => {
+                            setSelectedDate(opt);
+                            setOpenDropdown(null);
+                          }}
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                            selectedDate === opt
+                              ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
+                              : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
+                          }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -688,19 +764,6 @@ export function ExploreEventsPage({
           </section>
         )}
       </main>
-
-      <ExploreFilterModals
-        activeModal={openDropdown}
-        selectedScope={selectedScope}
-        selectedLocation={selectedLocation}
-        selectedPrice={selectedPrice}
-        selectedDate={selectedDate}
-        onClose={() => setOpenDropdown(null)}
-        onApplyScope={setSelectedScope}
-        onApplyLocation={setSelectedLocation}
-        onApplyPrice={setSelectedPrice}
-        onApplyDate={setSelectedDate}
-      />
 
       <FooterSection onNavigateAbout={onNavigateAbout} />
     </div>
