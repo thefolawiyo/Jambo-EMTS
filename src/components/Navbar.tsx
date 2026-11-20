@@ -299,7 +299,7 @@ export function Navbar({
             <button
               type="button"
               onClick={onOpenSignInModal}
-              className={`btn-jambo-interactive hidden h-[48px] cursor-pointer items-center justify-center rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] sm:inline-flex ${
+              className={`btn-jambo-interactive hidden h-[48px] cursor-pointer items-center justify-center rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] sm:inline-flex ${
                 isDark
                   ? 'bg-white/10 text-white backdrop-blur-sm hover:bg-white/15'
                   : 'bg-white text-[#2e2e2e] hover:bg-[#f4f3f3]'
@@ -313,7 +313,7 @@ export function Navbar({
                 setMobileMenuOpen(false);
                 onOpenCreateModal();
               }}
-              className="btn-jambo-primary flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[12px] px-4 text-[14px] font-semibold leading-[20px] text-white sm:px-[18px]"
+              className="btn-jambo-primary flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[15px] px-4 text-[14px] font-semibold leading-[20px] text-white sm:px-[18px]"
             >
               <span>Create event</span>
               <img src="/assets/b9518.svg" alt="" className="size-4" />
@@ -325,7 +325,7 @@ export function Navbar({
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
-              className={`flex size-12 cursor-pointer items-center justify-center rounded-[12px] border transition-colors md:hidden ${
+              className={`btn-smooth-corner flex size-12 cursor-pointer items-center justify-center rounded-[15px] border transition-colors md:hidden ${
                 isDark
                   ? 'border-white/15 bg-white/10 text-white hover:bg-white/15'
                   : 'border-[#e7e5e5] bg-white text-[#2e2e2e] hover:bg-[#f4f3f3]'
@@ -475,7 +475,7 @@ export function Navbar({
                   setMobileMenuOpen(false);
                   onOpenSignInModal();
                 }}
-                className={`btn-jambo-interactive flex h-[48px] w-full cursor-pointer items-center justify-center rounded-[12px] border text-[14px] font-semibold transition-colors ${
+                className={`btn-jambo-interactive flex h-[48px] w-full cursor-pointer items-center justify-center rounded-[15px] border text-[14px] font-semibold transition-colors ${
                   isDark
                     ? 'border-white/15 bg-white/10 text-white hover:bg-white/15'
                     : 'border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#f4f3f3]'

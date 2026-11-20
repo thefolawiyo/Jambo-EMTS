@@ -128,7 +128,7 @@ function TicketTiersCard({
       <button
         type="button"
         onClick={() => onCheckout(event)}
-        className="btn-jambo-primary mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+        className="btn-jambo-primary mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
       >
         <span>
           {totalCount > 0
@@ -325,7 +325,7 @@ export function EventDetailsPage({
     <button
       type="button"
       onClick={() => onGetTicket(event)}
-      className="btn-jambo-primary flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+      className="btn-jambo-primary flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
     >
       <span>Get ticket</span>
       <img src="/assets/b9518.svg" alt="" className="size-4" />

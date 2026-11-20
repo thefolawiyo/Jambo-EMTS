@@ -437,7 +437,7 @@ export function AboutPage({
             <button
               type="button"
               onClick={scrollToStory}
-              className="btn-jambo-primary group inline-flex h-[48px] cursor-pointer items-center justify-center gap-2.5 rounded-[12px] px-6 text-[15px] font-semibold text-white"
+              className="btn-jambo-primary group inline-flex h-[48px] cursor-pointer items-center justify-center gap-2.5 rounded-[15px] px-6 text-[15px] font-semibold text-white"
             >
               <span>Read our story</span>
               <span
@@ -450,7 +450,7 @@ export function AboutPage({
             <button
               type="button"
               onClick={onNavigateExplore}
-              className="btn-jambo-interactive inline-flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[12px] border border-white/20 bg-white/5 px-6 text-[15px] font-semibold text-white backdrop-blur-sm hover:border-white/35 hover:bg-white/12"
+              className="btn-jambo-interactive inline-flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[15px] border border-white/20 bg-white/5 px-6 text-[15px] font-semibold text-white backdrop-blur-sm hover:border-white/35 hover:bg-white/12"
             >
               <span>See what&apos;s on</span>
             </button>
@@ -889,7 +889,7 @@ export function AboutPage({
               <button
                 type="button"
                 onClick={onNavigateExplore}
-                className="btn-jambo-primary group inline-flex h-[48px] cursor-pointer items-center justify-center gap-2.5 rounded-[12px] px-6 text-[15px] font-semibold text-white"
+                className="btn-jambo-primary group inline-flex h-[48px] cursor-pointer items-center justify-center gap-2.5 rounded-[15px] px-6 text-[15px] font-semibold text-white"
               >
                 <span>Find an event tonight</span>
                 <span
@@ -902,7 +902,7 @@ export function AboutPage({
               <button
                 type="button"
                 onClick={onOpenCreateModal}
-                className="btn-jambo-interactive inline-flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[12px] border border-white/20 bg-white/5 px-6 text-[15px] font-semibold text-white hover:border-white/35 hover:bg-white/12"
+                className="btn-jambo-interactive inline-flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[15px] border border-white/20 bg-white/5 px-6 text-[15px] font-semibold text-white hover:border-white/35 hover:bg-white/12"
               >
                 <span>Host on Jambo</span>
               </button>
