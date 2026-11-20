@@ -128,7 +128,7 @@ function TicketTiersCard({
       <button
         type="button"
         onClick={() => onCheckout(event)}
-        className="btn-jambo-primary mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+        className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-[20px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
       >
         <span>
           {totalCount > 0
@@ -325,7 +325,7 @@ export function EventDetailsPage({
     <button
       type="button"
       onClick={() => onGetTicket(event)}
-      className="btn-jambo-primary flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+      className="btn-jambo-primary flex h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-[20px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
     >
       <span>Get ticket</span>
       <img src="/assets/b9518.svg" alt="" className="size-4" />
@@ -497,7 +497,7 @@ export function EventDetailsPage({
         /* Variant 2: Split Showcase (Figma 223:2878) — full-bleed left edge & viewport-height banner */
         <main className="grid w-full grid-cols-1 lg:grid-cols-[46%_54%]">
           {/* Left Panel: Full-bleed Event Poster touching left edge & filling viewport height */}
-          <div className="relative h-[70vh] min-h-[460px] w-full overflow-hidden bg-[#1a1a1a] lg:sticky lg:top-0 lg:h-[calc(100vh-88px)]">
+          <div className="relative h-[70vh] min-h-[460px] w-full overflow-hidden bg-[#1a1a1a] lg:sticky lg:top-0 lg:h-[calc(100vh-86px)]">
             <img
               src={event.wideImage ?? event.image}
               alt={event.title}

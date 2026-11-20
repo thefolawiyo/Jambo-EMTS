@@ -35,7 +35,7 @@ export function ProducersSection({ onOpenCreateModal }: ProducersSectionProps) {
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="btn-jambo-primary flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+            className="btn-jambo-primary flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[20px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
           >
             <span>Create events for free</span>
             <img src="/assets/b9518.svg" alt="" className="size-4" />
