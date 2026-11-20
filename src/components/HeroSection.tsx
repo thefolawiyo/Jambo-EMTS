@@ -188,9 +188,9 @@ export function HeroSection({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="btn-jambo-interactive btn-jambo-tilt-right flex h-[42px] cursor-pointer items-center justify-center rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
+            className="btn-jambo-interactive flex h-[42px] cursor-pointer items-center justify-center rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
           >
-            Create event
+            <span>Create event</span>
           </button>
         </div>
       </div>

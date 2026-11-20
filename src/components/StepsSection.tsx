@@ -26,10 +26,10 @@ export function StepsSection() {
               className={`flex h-[40px] cursor-pointer items-center justify-center rounded-[12px] px-4 py-2 text-[14px] font-medium leading-[20px] transition-all ${
                 audience === 'attendees'
                   ? 'btn-jambo-primary text-white'
-                  : 'border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#fafafa]'
+                  : 'btn-jambo-interactive border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#fafafa]'
               }`}
             >
-              For Attendees
+              <span>For Attendees</span>
             </button>
             <button
               type="button"
@@ -37,10 +37,10 @@ export function StepsSection() {
               className={`flex h-[40px] cursor-pointer items-center justify-center rounded-[12px] px-4 py-2 text-[14px] font-medium leading-[20px] transition-all ${
                 audience === 'organizers'
                   ? 'btn-jambo-primary text-white'
-                  : 'border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#fafafa]'
+                  : 'btn-jambo-interactive border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#fafafa]'
               }`}
             >
-              For Organizers
+              <span>For Organizers</span>
             </button>
           </div>
         </div>

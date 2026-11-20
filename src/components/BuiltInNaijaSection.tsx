@@ -24,7 +24,7 @@ export function BuiltInNaijaSection() {
             {BUILT_IN_NAIJA_FEATURES.map((feat, idx) => (
               <div
                 key={feat.title}
-                className={`flex min-h-[198px] flex-col justify-between p-6 transition-colors hover:bg-[#fafafa] ${
+                className={`flex min-h-[198px] flex-col justify-between p-6 transition-colors duration-200 hover:bg-[#fff2eb] ${
                   idx % 3 !== 2 ? 'lg:border-r lg:border-[#e7e5e5]' : ''
                 } ${idx < 3 ? 'lg:border-b lg:border-[#e7e5e5]' : ''}`}
               >

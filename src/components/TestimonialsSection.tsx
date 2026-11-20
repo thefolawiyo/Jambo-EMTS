@@ -2,7 +2,7 @@ import { TESTIMONIALS_ROW_1, TESTIMONIALS_ROW_2, type TestimonialItem } from '..
 
 function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <div className="flex w-[282px] shrink-0 flex-col justify-between gap-4 rounded-[16px] border-[0.5px] border-[#e7e5e5] bg-white p-4">
+    <div className="flex w-[282px] shrink-0 flex-col justify-between gap-6 rounded-[16px] border-[0.5px] border-[#e7e5e5] bg-white p-4">
       <p className="text-[14px] leading-[20px] text-[#807e7e]">{item.quote}</p>
       <div className="w-full border-t border-[#e7e5e5]" />
       <div className="flex items-center gap-2">

@@ -190,7 +190,7 @@ export function CookiePolicyPage({
               onClick={handleSavePreferences}
               className="btn-jambo-primary inline-flex min-h-[44px] cursor-pointer items-center justify-center rounded-[12px] px-6 py-3 text-[14px] font-semibold text-white"
             >
-              Save cookie preferences
+              <span>Save cookie preferences</span>
             </button>
             {savedNotice && (
               <span className="text-[14px] font-medium text-[#16a571]">

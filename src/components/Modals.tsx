@@ -62,7 +62,7 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
                 onClick={onClose}
                 className="btn-jambo-primary mt-6 w-full cursor-pointer rounded-[12px] py-3 text-[14px] font-semibold text-white"
               >
-                Done
+                <span>Done</span>
               </button>
             </div>
           ) : (
@@ -120,9 +120,11 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
                 type="submit"
                 className="btn-jambo-primary mt-6 w-full cursor-pointer rounded-[12px] py-3 text-[14px] font-semibold text-white"
               >
-                {total === 0
-                  ? `Reserve ${qty} Free Ticket${qty > 1 ? 's' : ''}`
-                  : `Checkout · ₦${total.toLocaleString()}`}
+                <span>
+                  {total === 0
+                    ? `Reserve ${qty} Free Ticket${qty > 1 ? 's' : ''}`
+                    : `Checkout · ₦${total.toLocaleString()}`}
+                </span>
               </button>
             </form>
           )}

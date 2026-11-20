@@ -299,13 +299,13 @@ export function Navbar({
             <button
               type="button"
               onClick={onOpenSignInModal}
-              className={`btn-jambo-interactive btn-jambo-tilt-right hidden cursor-pointer rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] sm:inline-flex ${
+              className={`btn-jambo-interactive hidden cursor-pointer rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] sm:inline-flex ${
                 isDark
                   ? 'bg-white/10 text-white backdrop-blur-sm hover:bg-white/15'
                   : 'bg-white text-[#2e2e2e] hover:bg-[#f4f3f3]'
               }`}
             >
-              Sign in
+              <span>Sign in</span>
             </button>
             <button
               type="button"

@@ -61,16 +61,16 @@ export function CookieConsentBanner({
           <button
             type="button"
             onClick={() => handleChoice('dismissed')}
-            className="btn-jambo-interactive btn-jambo-tilt-right flex min-h-[42px] cursor-pointer items-center justify-center rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] text-[#ff5200] hover:bg-[#fff2eb]"
+            className="btn-jambo-interactive flex min-h-[42px] cursor-pointer items-center justify-center rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] text-[#ff5200] hover:bg-[#fff2eb]"
           >
-            Dismiss
+            <span>Dismiss</span>
           </button>
           <button
             type="button"
             onClick={() => handleChoice('accepted')}
             className="btn-jambo-primary flex min-h-[42px] cursor-pointer items-center justify-center rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] text-white"
           >
-            Accept all
+            <span>Accept all</span>
           </button>
         </div>
       </div>
