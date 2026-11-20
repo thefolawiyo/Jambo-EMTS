@@ -23,7 +23,7 @@ export function StepsSection() {
             <button
               type="button"
               onClick={() => setAudience('attendees')}
-              className={`flex h-[40px] cursor-pointer items-center justify-center rounded-[12px] px-4 py-2 text-[14px] font-medium leading-[20px] transition-all ${
+              className={`flex h-[48px] cursor-pointer items-center justify-center rounded-[12px] px-5 text-[14px] font-medium leading-[20px] transition-all ${
                 audience === 'attendees'
                   ? 'btn-jambo-primary text-white'
                   : 'btn-jambo-interactive border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#fafafa]'
@@ -34,7 +34,7 @@ export function StepsSection() {
             <button
               type="button"
               onClick={() => setAudience('organizers')}
-              className={`flex h-[40px] cursor-pointer items-center justify-center rounded-[12px] px-4 py-2 text-[14px] font-medium leading-[20px] transition-all ${
+              className={`flex h-[48px] cursor-pointer items-center justify-center rounded-[12px] px-5 text-[14px] font-medium leading-[20px] transition-all ${
                 audience === 'organizers'
                   ? 'btn-jambo-primary text-white'
                   : 'btn-jambo-interactive border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:bg-[#fafafa]'

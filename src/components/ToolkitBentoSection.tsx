@@ -334,11 +334,16 @@ export function ToolkitBentoSection() {
                 </div>
               </div>
 
-              {/* Team Photo (Figma 89:678) */}
+              {/* Team Video (Figma 89:678) */}
               <div className="relative z-10 mt-6 h-[252px] w-full overflow-hidden rounded-[20px] border-[0.5px] border-[#e7e5e5] bg-[#fafafa]">
-                <img
-                  src="/assets/team_photo.png"
-                  alt="Event organizers collaborating together"
+                <video
+                  src="/assets/team_video.mp4"
+                  poster="/assets/team_photo.png"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label="Event organizers collaborating together"
                   className="h-full w-full object-cover object-center"
                 />
               </div>

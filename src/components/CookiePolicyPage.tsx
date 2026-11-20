@@ -188,7 +188,7 @@ export function CookiePolicyPage({
             <button
               type="button"
               onClick={handleSavePreferences}
-              className="btn-jambo-primary inline-flex min-h-[44px] cursor-pointer items-center justify-center rounded-[12px] px-6 py-3 text-[14px] font-semibold text-white"
+              className="btn-jambo-primary inline-flex h-[48px] cursor-pointer items-center justify-center rounded-[12px] px-6 text-[14px] font-semibold text-white"
             >
               <span>Save cookie preferences</span>
             </button>

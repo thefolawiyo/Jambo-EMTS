@@ -34,7 +34,7 @@ export function FaqsSection() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   aria-expanded={isOpen}
-                  className="flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left transition-colors hover:bg-[#fafafa]"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left transition-colors duration-200 hover:bg-[#fafafa]"
                 >
                   <span className="font-display text-[16px] font-semibold leading-[24px] tracking-[-0.01em] text-[#2e2e2e] sm:text-[18px] sm:leading-[26px]">
                     {faq.question}
@@ -42,16 +42,26 @@ export function FaqsSection() {
                   <img
                     src="/assets/70303.svg"
                     alt=""
-                    className={`size-6 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-45' : ''
+                    className={`size-6 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                      isOpen ? 'rotate-45' : 'rotate-0'
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-[14px] leading-[22px] text-[#807e7e]">
-                    {faq.answer}
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div
+                      className={`px-6 pb-6 pt-0 text-[14px] leading-[22px] text-[#807e7e] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                        isOpen ? 'translate-y-0' : '-translate-y-1.5'
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

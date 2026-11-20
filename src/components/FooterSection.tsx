@@ -119,7 +119,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
           {/* Email Subscription Form */}
           <form
             onSubmit={handleSubscribe}
-            className={`flex h-[58px] w-full items-center justify-between rounded-[16px] border-[0.5px] border-[#e7e5e5] bg-white pl-6 pr-2 shadow-[0px_8px_24px_0px_rgba(46,46,46,0.1)] transition-all duration-700 ease-out ${
+            className={`flex h-[62px] w-full items-center justify-between rounded-[16px] border-[0.5px] border-[#e7e5e5] bg-white pl-6 pr-[7px] shadow-[0px_8px_24px_0px_rgba(46,46,46,0.1)] transition-all duration-700 ease-out ${
               inView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
             style={{ transitionDelay: '150ms' }}
@@ -138,7 +138,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
             />
             <button
               type="submit"
-              className="btn-jambo-interactive flex h-[42px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-[#2e2e2e] px-[18px] text-[14px] font-semibold leading-[20px] text-white hover:bg-[#1f1f1f]"
+              className="btn-jambo-interactive flex h-[48px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-[#2e2e2e] px-[18px] text-[14px] font-semibold leading-[20px] text-white hover:bg-[#1f1f1f]"
             >
               <span>{subscribed ? 'Subscribed' : 'Subscribe'}</span>
               <img src="/assets/b9518.svg" alt="" className="size-4" />

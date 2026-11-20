@@ -1,4 +1,7 @@
-export type EventDetailsVariantId = 'editorial-banner' | 'split-showcase';
+export type EventDetailsVariantId =
+  | 'editorial-banner'
+  | 'split-showcase'
+  | 'full-bleed-tickets';
 
 export interface EventDetailsVariantMeta {
   id: EventDetailsVariantId;
@@ -18,6 +21,12 @@ export const EVENT_DETAILS_VARIANTS: Record<EventDetailsVariantId, EventDetailsV
     name: 'Split Showcase',
     description:
       'Full-bleed 50/50 split screen with a sticky left event poster and a scrollable right details & checkout panel.',
+  },
+  'full-bleed-tickets': {
+    id: 'full-bleed-tickets',
+    name: 'Full-Bleed Tickets',
+    description:
+      'Edge-to-edge hero banner above a two-column layout with event story & map on the left and tiered ticket selection on the right.',
   },
 };
 

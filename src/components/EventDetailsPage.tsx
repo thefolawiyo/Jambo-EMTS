@@ -19,6 +19,132 @@ interface EventDetailsPageProps {
   onGetTicket: (event: EventItem) => void;
 }
 
+interface TicketTier {
+  id: string;
+  name: string;
+  price: number;
+  remaining: number;
+  soldPct: number;
+}
+
+const DEFAULT_TICKET_TIERS: TicketTier[] = [
+  { id: 'general', name: 'General Pass', price: 15500, remaining: 274, soldPct: 38 },
+  { id: 'delegate', name: 'Delegate Pass', price: 40000, remaining: 104, soldPct: 72 },
+  { id: 'silicon-valley', name: 'Silicon Valley Pass', price: 85000, remaining: 38, soldPct: 72 },
+  { id: 'elon-musk', name: 'Elon Musk Pass', price: 120000, remaining: 78, soldPct: 18 },
+];
+
+function TicketTiersCard({
+  event,
+  onCheckout,
+}: {
+  event: EventItem;
+  onCheckout: (evt: EventItem) => void;
+}) {
+  const [quantities, setQuantities] = useState<Record<string, number>>({
+    general: 0,
+    delegate: 0,
+    'silicon-valley': 0,
+    'elon-musk': 0,
+  });
+
+  const adjustQty = (id: string, delta: number) => {
+    setQuantities((prev) => ({
+      ...prev,
+      [id]: Math.max(0, Math.min(10, (prev[id] ?? 0) + delta)),
+    }));
+  };
+
+  const totalCount = Object.values(quantities).reduce((a, b) => a + b, 0);
+  const totalAmount = DEFAULT_TICKET_TIERS.reduce(
+    (sum, tier) => sum + (quantities[tier.id] ?? 0) * tier.price,
+    0,
+  );
+
+  return (
+    <div className="rounded-[24px] border-[0.5px] border-[#e7e5e5] bg-white p-6 shadow-[0px_8px_30px_-16px_rgba(46,46,46,0.08)] lg:sticky lg:top-24">
+      <h2 className="font-display text-[22px] font-bold leading-[30px] tracking-[-0.02em] text-[#2e2e2e]">
+        Tickets
+      </h2>
+
+      <div className="mt-5 flex flex-col gap-4">
+        {DEFAULT_TICKET_TIERS.map((tier) => {
+          const qty = quantities[tier.id] ?? 0;
+          return (
+            <div
+              key={tier.id}
+              className={`rounded-[16px] border p-4 transition-colors ${
+                qty > 0 ? 'border-[#ff5200] bg-[#fffaf7]' : 'border-[#e7e5e5] bg-white'
+              }`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-[15px] font-semibold leading-[22px] text-[#2e2e2e]">
+                    {tier.name}
+                  </p>
+                  <p className="mt-0.5 text-[14px] font-normal leading-[20px] text-[#807e7e]">
+                    ₦{tier.price.toLocaleString()}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    aria-label={`Decrease ${tier.name} quantity`}
+                    onClick={() => adjustQty(tier.id, -1)}
+                    className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-[#f4f3f3] text-[16px] font-medium text-[#2e2e2e] transition-colors hover:bg-[#e7e5e5]"
+                  >
+                    −
+                  </button>
+                  <span className="w-5 text-center text-[14px] font-semibold text-[#2e2e2e]">
+                    {qty}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label={`Increase ${tier.name} quantity`}
+                    onClick={() => adjustQty(tier.id, 1)}
+                    className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-[#fff2eb] text-[16px] font-medium text-[#ff5200] transition-colors hover:bg-[#ffe2d1]"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              {/* Availability progress bar */}
+              <div className="mt-3.5 h-1.5 w-full overflow-hidden rounded-full bg-[#f4f3f3]">
+                <div
+                  className="h-full rounded-full bg-[#ff5200]"
+                  style={{ width: `${tier.soldPct}%` }}
+                />
+              </div>
+              <p className="mt-1.5 text-[12px] leading-[16px] text-[#807e7e]">
+                {tier.remaining} remaining
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => onCheckout(event)}
+        className="btn-jambo-primary mt-6 flex h-[48px] w-full cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+      >
+        <span>
+          {totalCount > 0
+            ? `Get ticket · ₦${totalAmount.toLocaleString()}`
+            : 'Get ticket'}
+        </span>
+        <img src="/assets/b9518.svg" alt="" className="size-4" />
+      </button>
+
+      <p className="mt-3 text-center text-[12px] leading-[18px] text-[#807e7e]">
+        Tickets are delivered to your email, no sign up needed.
+      </p>
+    </div>
+  );
+}
+
 function getDefaultDescription(event: EventItem): {
   paragraphs: string[];
   more: string;
@@ -220,7 +346,99 @@ export function EventDetailsPage({
         onOpenSignInModal={onOpenSignInModal}
       />
 
-      {variant === 'editorial-banner' ? (
+      {variant === 'full-bleed-tickets' ? (
+        /* Variant 3: Full-Bleed Hero Banner + Tiered Tickets Card (Figma 221:2151) */
+        <main className="w-full pb-24">
+          {/* Full-Bleed Edge-to-Edge Hero Banner */}
+          <div className="relative h-[380px] w-full overflow-hidden bg-[#1a1a1a] sm:h-[440px] lg:h-[500px]">
+            <img
+              src={event.wideImage ?? event.image}
+              alt={event.title}
+              className="h-full w-full object-cover object-center"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 h-[140px]"
+              style={{
+                background:
+                  'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%)',
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-[260px]"
+              style={{
+                background:
+                  'linear-gradient(to top, rgba(0,0,0,0.88) 20%, rgba(0,0,0,0) 100%)',
+              }}
+            />
+
+            {/* Top Back Button */}
+            <div className="absolute inset-x-0 top-6 z-10 mx-auto max-w-[1440px] px-6 lg:px-[120px]">
+              <button
+                type="button"
+                onClick={onBack}
+                className="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full bg-black/30 px-3.5 text-[15px] font-medium leading-[24px] text-[#fafafa] backdrop-blur-md transition-colors hover:bg-black/50"
+              >
+                <img
+                  src="/assets/c5d14.svg"
+                  alt=""
+                  className="size-5 rotate-90 brightness-0 invert"
+                />
+                <span>Back</span>
+              </button>
+            </div>
+
+            {/* Bottom Title, Meta & Report Row */}
+            <div className="absolute inset-x-0 bottom-7 z-10 mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-6 sm:flex-row sm:items-end lg:bottom-10 lg:px-[120px]">
+              <div className="flex flex-col gap-2.5">
+                <h1 className="font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-white sm:text-[36px] sm:leading-[1.15]">
+                  {event.title}
+                </h1>
+                <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <img src="/assets/b9c47.svg" alt="" className="size-5 shrink-0" />
+                    <span className="text-[13px] leading-[20px] text-[#e7e5e5]">{event.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <img src="/assets/53a02.svg" alt="" className="size-5 shrink-0" />
+                    <span className="text-[13px] leading-[20px] text-[#e7e5e5]">{event.venue}</span>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setReported(true)}
+                className="inline-flex min-h-[44px] w-fit cursor-pointer items-center gap-2 rounded-full bg-black/35 px-3.5 text-[14px] font-medium leading-[20px] text-[#ff5c6c] backdrop-blur-md transition-colors hover:bg-black/55"
+              >
+                <img src="/assets/261e8.svg" alt="" className="size-5 shrink-0" />
+                <span>{reported ? 'Event reported' : 'Report this event'}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* 2-Column Content Row: Left Details + Map + Host, Right Tiered Tickets Card */}
+          <div className="mx-auto mt-12 grid max-w-[1440px] grid-cols-1 gap-10 px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-[120px]">
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-4">
+                <h2 className="font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
+                  About this event
+                </h2>
+                {descriptionBlock}
+              </div>
+
+              <DirectionMapCard address={fullAddress} />
+
+              <HostedByBlock organizerName={organizerName} />
+            </div>
+
+            <div>
+              <TicketTiersCard event={event} onCheckout={onGetTicket} />
+            </div>
+          </div>
+        </main>
+      ) : variant === 'editorial-banner' ? (
         /* Variant 1: Editorial Banner (Figma 212:1980) */
         <main className="mx-auto max-w-[1440px] px-6 pb-24 pt-12 lg:px-[120px] lg:pt-20">
           <div>{backButton}</div>
@@ -279,7 +497,7 @@ export function EventDetailsPage({
         /* Variant 2: Split Showcase (Figma 223:2878) — full-bleed left edge & viewport-height banner */
         <main className="grid w-full grid-cols-1 lg:grid-cols-[46%_54%]">
           {/* Left Panel: Full-bleed Event Poster touching left edge & filling viewport height */}
-          <div className="relative h-[70vh] min-h-[460px] w-full overflow-hidden bg-[#1a1a1a] lg:sticky lg:top-0 lg:h-[calc(100vh-82px)]">
+          <div className="relative h-[70vh] min-h-[460px] w-full overflow-hidden bg-[#1a1a1a] lg:sticky lg:top-0 lg:h-[calc(100vh-88px)]">
             <img
               src={event.wideImage ?? event.image}
               alt={event.title}

@@ -106,7 +106,7 @@ export function HeroSection({
         {/* Search Bar (Figma 30:4458) */}
         <form
           onSubmit={handleSubmit}
-          className="relative mt-10 flex w-full max-w-[680px] flex-col gap-2 rounded-[16px] border-[0.5px] border-[#e7e5e5] bg-white p-2 shadow-[0px_8px_24px_0px_rgba(46,46,46,0.1)] sm:h-[58px] sm:flex-row sm:items-center sm:gap-0 sm:p-0 sm:pl-4 sm:pr-[7.5px]"
+          className="relative mt-10 flex w-full max-w-[680px] flex-col gap-2 rounded-[16px] border-[0.5px] border-[#e7e5e5] bg-white p-2 shadow-[0px_8px_24px_0px_rgba(46,46,46,0.1)] sm:h-[62px] sm:flex-row sm:items-center sm:gap-0 sm:p-0 sm:pl-4 sm:pr-[7px]"
         >
           {/* Category Scope Dropdown */}
           <div className="relative shrink-0">
@@ -168,7 +168,7 @@ export function HeroSection({
           {/* Search Submit Button */}
           <button
             type="submit"
-            className="btn-jambo-primary flex h-[42px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+            className="btn-jambo-primary flex h-[48px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
           >
             <span>Search</span>
             <img src="/assets/b9518.svg" alt="" className="size-4" />
@@ -180,7 +180,7 @@ export function HeroSection({
           <button
             type="button"
             onClick={onNavigateExplore}
-            className="btn-jambo-primary flex h-[42px] cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+            className="btn-jambo-primary flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
           >
             <span>Explore events</span>
             <img src="/assets/b9518.svg" alt="" className="size-4" />
@@ -188,7 +188,7 @@ export function HeroSection({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="btn-jambo-interactive flex h-[42px] cursor-pointer items-center justify-center rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
+            className="btn-jambo-interactive flex h-[48px] cursor-pointer items-center justify-center rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
           >
             <span>Create event</span>
           </button>

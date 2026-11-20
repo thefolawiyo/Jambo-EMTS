@@ -35,18 +35,23 @@ export function ProducersSection({ onOpenCreateModal }: ProducersSectionProps) {
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="btn-jambo-primary flex h-[42px] cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+            className="btn-jambo-primary flex h-[48px] cursor-pointer items-center justify-center gap-2 rounded-[12px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
           >
             <span>Create events for free</span>
             <img src="/assets/b9518.svg" alt="" className="size-4" />
           </button>
         </div>
 
-        {/* Right Column Portrait Image (Figma 52:995) */}
+        {/* Right Column Portrait Video (Figma 52:995) */}
         <div className="h-[520px] w-full overflow-hidden rounded-[24px] bg-[#f4f3f3] lg:h-[700px]">
-          <img
-            src="/assets/producer_photo.png"
-            alt="Event producer reviewing live event metrics on a tablet"
+          <video
+            src="/assets/producer_video.mp4"
+            poster="/assets/producer_photo.png"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Event producer reviewing live event metrics on a tablet"
             className="h-full w-full object-cover object-center"
           />
         </div>
