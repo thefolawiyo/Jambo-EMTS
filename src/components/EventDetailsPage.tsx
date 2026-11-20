@@ -285,6 +285,42 @@ export function EventDetailsPage({
               alt={event.title}
               className="h-full w-full object-cover object-center"
             />
+
+            {/* Top scrim so upper-banner controls stay legible on any poster */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 h-[150px]"
+              style={{
+                background:
+                  'linear-gradient(to bottom, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0) 100%)',
+              }}
+            />
+
+            {/* Upper Banner Overlay: Back (mobile + desktop) & Report this event (mobile only) */}
+            <div className="absolute inset-x-4 top-4 z-10 flex items-center justify-between gap-3 lg:inset-x-12 lg:top-10 xl:left-16">
+              <button
+                type="button"
+                onClick={onBack}
+                className="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full bg-black/35 px-3.5 text-[15px] font-medium leading-[24px] text-[#fafafa] backdrop-blur-md transition-colors hover:bg-black/55 lg:bg-black/25 lg:px-4 lg:text-[16px]"
+              >
+                <img
+                  src="/assets/c5d14.svg"
+                  alt=""
+                  className="size-5 rotate-90 brightness-0 invert lg:size-6"
+                />
+                <span>Back</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setReported(true)}
+                className="inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full bg-white/92 px-3.5 text-[13px] font-medium leading-[20px] text-[#d80027] shadow-sm backdrop-blur-md transition-colors hover:bg-white lg:hidden"
+              >
+                <img src="/assets/261e8.svg" alt="" className="size-5 shrink-0" />
+                <span>{reported ? 'Event reported' : 'Report this event'}</span>
+              </button>
+            </div>
+
             <div
               className="pointer-events-none absolute inset-x-0 bottom-0 h-[320px]"
               style={{
@@ -310,12 +346,9 @@ export function EventDetailsPage({
           </div>
 
           {/* Right Panel: Scrollable Details, CTA, Map, Host */}
-          <div className="flex flex-col gap-10 px-6 py-10 lg:py-12 lg:pl-16 lg:pr-12 xl:pl-20 xl:pr-16">
-            {/* Top Bar: Back + Report */}
-            <div className="flex items-center justify-between gap-4">
-              {backButton}
-              {reportButton}
-            </div>
+          <div className="flex flex-col gap-10 px-6 py-8 lg:py-12 lg:pl-16 lg:pr-12 xl:pl-20 xl:pr-16">
+            {/* Desktop Top Bar: Report this event aligned right (Figma 223:3412) */}
+            <div className="hidden items-center justify-end lg:flex">{reportButton}</div>
 
             {/* About + CTA */}
             <div className="flex flex-col gap-6">
