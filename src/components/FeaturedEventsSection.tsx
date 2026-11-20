@@ -119,36 +119,42 @@ export function FeaturedEventsSection({
           </div>
         </div>
 
-        {/* Category Filter Pills (Figma 42:1325) */}
-        <div className="no-scrollbar mt-10 flex items-center gap-3 overflow-x-auto pb-2">
-          {CATEGORY_PILLS.map((pill) => {
-            const isActive = activeCategory === pill.id;
-            return (
-              <button
-                key={pill.id}
-                type="button"
-                onClick={() => setActiveCategory(pill.id)}
-                className={`flex h-[40px] shrink-0 cursor-pointer items-center gap-2 rounded-[12px] px-4 py-2 text-[14px] font-medium leading-[20px] transition-all ${
-                  isActive
-                    ? 'btn-jambo-primary text-white'
-                    : 'border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:border-[#2e2e2e]/40 hover:bg-[#fafafa]'
-                }`}
-              >
-                <img
-                  src={pill.icon}
-                  alt=""
-                  className={`size-4 shrink-0 ${
-                    isActive && pill.id !== 'Featured'
-                      ? 'brightness-0 invert'
-                      : !isActive && pill.id === 'Featured'
-                        ? 'invert'
-                        : ''
+        {/* Category Filter Pills (Figma 42:1325) with right-edge scroll fade affordance */}
+        <div className="relative mt-10">
+          <div className="no-scrollbar flex items-center gap-2.5 overflow-x-auto pb-2 pr-10 sm:gap-3 sm:pr-0">
+            {CATEGORY_PILLS.map((pill) => {
+              const isActive = activeCategory === pill.id;
+              return (
+                <button
+                  key={pill.id}
+                  type="button"
+                  onClick={() => setActiveCategory(pill.id)}
+                  className={`flex min-h-[44px] shrink-0 cursor-pointer items-center gap-2 rounded-[12px] px-4 py-2 text-[14px] font-medium leading-[20px] transition-all ${
+                    isActive
+                      ? 'btn-jambo-primary text-white'
+                      : 'border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:border-[#2e2e2e]/40 hover:bg-[#fafafa]'
                   }`}
-                />
-                <span className="whitespace-nowrap">{pill.label}</span>
-              </button>
-            );
-          })}
+                >
+                  <img
+                    src={pill.icon}
+                    alt=""
+                    className={`size-4 shrink-0 ${
+                      isActive && pill.id !== 'Featured'
+                        ? 'brightness-0 invert'
+                        : !isActive && pill.id === 'Featured'
+                          ? 'invert'
+                          : ''
+                    }`}
+                  />
+                  <span className="whitespace-nowrap">{pill.label}</span>
+                </button>
+              );
+            })}
+          </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent sm:hidden"
+          />
         </div>
 
         {/* Active Search Indicator */}

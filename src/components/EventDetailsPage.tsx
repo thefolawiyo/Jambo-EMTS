@@ -52,7 +52,7 @@ function OrganizerSocials() {
   ];
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-3">
       {socials.map((s) => (
         <a
           key={s.label}
@@ -60,7 +60,7 @@ function OrganizerSocials() {
           target="_blank"
           rel="noreferrer"
           aria-label={s.label}
-          className="flex size-10 items-center justify-center rounded-[12px] bg-[#f4f3f3] transition-colors hover:bg-[#ffe8db]"
+          className="flex size-11 items-center justify-center rounded-[12px] bg-[#f4f3f3] transition-colors hover:bg-[#ffe8db]"
         >
           <img src={s.icon} alt="" className={s.size} />
         </a>
@@ -84,7 +84,7 @@ function DirectionMapCard({ address }: { address: string }) {
           href={mapsUrl}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-opacity hover:opacity-80"
+          className="-my-2 -mr-2 flex min-h-[44px] items-center gap-2 rounded-lg px-2 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-colors hover:bg-[#fff2eb]"
         >
           <img src="/assets/4933e.svg" alt="" className="size-4" />
           <span>Open on Google Map</span>
@@ -161,7 +161,7 @@ export function EventDetailsPage({
     <button
       type="button"
       onClick={() => setReported(true)}
-      className="flex cursor-pointer items-center gap-2 rounded-lg p-2 text-[14px] font-medium leading-[20px] text-[#d80027] transition-colors hover:bg-[#d80027]/5"
+      className="flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg px-2.5 py-2 text-[14px] font-medium leading-[20px] text-[#d80027] transition-colors hover:bg-[#d80027]/5"
     >
       <img src="/assets/261e8.svg" alt="" className="size-6 shrink-0" />
       <span>{reported ? 'Event reported' : 'Report this event'}</span>
@@ -172,7 +172,7 @@ export function EventDetailsPage({
     <button
       type="button"
       onClick={onBack}
-      className="flex cursor-pointer items-center gap-3 text-[16px] font-medium leading-[24px] text-black transition-opacity hover:opacity-70"
+      className="-ml-2 inline-flex min-h-[44px] cursor-pointer items-center gap-3 rounded-lg px-2 text-[16px] font-medium leading-[24px] text-black transition-opacity hover:opacity-70"
     >
       <img src="/assets/c5d14.svg" alt="" className="size-6 rotate-90" />
       <span>Back</span>
@@ -188,7 +188,7 @@ export function EventDetailsPage({
       <button
         type="button"
         onClick={() => setExpanded((prev) => !prev)}
-        className="cursor-pointer text-[16px] font-medium leading-[24px] text-[#ff5200] hover:underline"
+        className="-ml-2 inline-flex min-h-[44px] cursor-pointer items-center rounded-lg px-2 text-[16px] font-medium leading-[24px] text-[#ff5200] hover:underline"
       >
         {expanded ? 'Show less' : 'Show more...'}
       </button>

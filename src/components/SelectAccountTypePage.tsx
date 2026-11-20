@@ -59,7 +59,7 @@ export function SelectAccountTypePage({
           <button
             type="button"
             onClick={onBack}
-            className="flex cursor-pointer items-center gap-4 text-[16px] font-medium leading-[24px] text-black transition-opacity hover:opacity-70"
+            className="-ml-2 inline-flex min-h-[44px] cursor-pointer items-center gap-3 rounded-lg px-2 text-[16px] font-medium leading-[24px] text-black transition-opacity hover:opacity-70"
           >
             <img src="/assets/c5d14.svg" alt="" className="size-6 rotate-90" />
             <span>Back</span>
@@ -153,7 +153,7 @@ export function SelectAccountTypePage({
               <button
                 type="button"
                 onClick={onSignIn}
-                className="cursor-pointer text-[16px] font-semibold leading-[24px] text-[#ff5200] hover:underline"
+                className="inline-flex min-h-[44px] cursor-pointer items-center px-1.5 text-[16px] font-semibold leading-[24px] text-[#ff5200] hover:underline"
               >
                 Sign in
               </button>

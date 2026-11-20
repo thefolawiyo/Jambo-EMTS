@@ -67,11 +67,14 @@ export default function App() {
   useEffect(() => {
     const onHashChange = () => {
       const next = getInitialRoute();
+      setTicketModalEvent(null);
+      setActionModal(null);
       setPage(next.page);
       if (next.event) {
         setActiveEvent(next.event);
         setActiveDetailsVariant(next.event.detailsVariant ?? getRandomEventDetailsVariant());
       }
+      window.scrollTo(0, 0);
     };
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);

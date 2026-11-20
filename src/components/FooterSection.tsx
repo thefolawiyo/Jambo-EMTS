@@ -167,7 +167,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Jambo on X"
-                className="flex size-10 items-center justify-center rounded-[12px] border border-[#4a4a4a] bg-[#383838] transition-colors hover:border-[#807e7e]"
+                className="flex size-11 items-center justify-center rounded-[12px] border border-[#4a4a4a] bg-[#383838] transition-colors hover:border-[#807e7e]"
               >
                 <img src="/assets/baeb6.svg" alt="" className="size-5" />
               </a>
@@ -176,7 +176,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Jambo on Instagram"
-                className="flex size-10 items-center justify-center rounded-[12px] border border-[#4a4a4a] bg-[#383838] transition-colors hover:border-[#807e7e]"
+                className="flex size-11 items-center justify-center rounded-[12px] border border-[#4a4a4a] bg-[#383838] transition-colors hover:border-[#807e7e]"
               >
                 <img src="/assets/0f7a2.svg" alt="" className="size-5" />
               </a>
@@ -185,7 +185,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Jambo on YouTube"
-                className="flex size-10 items-center justify-center rounded-[12px] border border-[#4a4a4a] bg-[#383838] transition-colors hover:border-[#807e7e]"
+                className="flex size-11 items-center justify-center rounded-[12px] border border-[#4a4a4a] bg-[#383838] transition-colors hover:border-[#807e7e]"
               >
                 <img src="/assets/9d03e.svg" alt="" className="size-5" />
               </a>
@@ -202,14 +202,14 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
         >
           <img src="/assets/f579f.svg" alt="" className="mb-10 w-full" />
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
-            <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:gap-x-8">
               {FOOTER_LINKS.map((link) =>
                 link.label === 'About' && onNavigateAbout ? (
                   <button
                     key={link.label}
                     type="button"
                     onClick={onNavigateAbout}
-                    className="flex cursor-pointer items-center gap-2 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
+                    className="flex min-h-[44px] cursor-pointer items-center gap-2 py-2.5 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
                   >
                     <span>{link.label}</span>
                   </button>
@@ -217,7 +217,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex items-center gap-2 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
+                    className="flex min-h-[44px] items-center gap-2 py-2.5 text-[14px] font-medium leading-[20px] text-[#807e7e] transition-colors hover:text-white"
                   >
                     <span>{link.label}</span>
                     {link.hasChevron && (

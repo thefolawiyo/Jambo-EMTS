@@ -381,7 +381,7 @@ export const ATTENDEE_STEPS: StepItem[] = [
     number: '03',
     title: 'Attend & enjoy!',
     description:
-      'Personalized picks across concerts, talks, festivals and more — filtered by city, vibe and date.',
+      'Flash your QR pass at the door in under a second — offline-ready, no printing, just straight into the room.',
   },
 ];
 

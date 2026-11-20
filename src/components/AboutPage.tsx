@@ -463,7 +463,7 @@ export function AboutPage({
             type="button"
             onClick={handleCopyCoords}
             title="Copy Lagos coordinates"
-            className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-mono text-[11px] tracking-[0.08em] text-white/60 transition-all hover:border-[#ff5200]/50 hover:bg-white/10 hover:text-white"
+            className="group inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 font-mono text-[11px] tracking-[0.08em] text-white/70 transition-all hover:border-[#ff5200]/50 hover:bg-white/10 hover:text-white"
           >
             <svg
               className="size-3.5 text-[#ff7a33] transition-transform group-hover:scale-110"
@@ -576,27 +576,25 @@ export function AboutPage({
                     alt={card.caption}
                     className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  {/* Bottom scrim */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
 
                   {/* Top-right LIVE badge */}
-                  <div className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-3 py-1 backdrop-blur-md">
+                  <div className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1 backdrop-blur-md">
                     <span className="size-2 animate-pulse rounded-full bg-[#ef4444]" />
                     <span className="font-mono text-[11px] font-semibold tracking-[0.1em] text-white">
                       LIVE
                     </span>
                   </div>
-
-                  {/* Bottom caption + REC stamp */}
-                  <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white">
-                    <span className="text-[14px] font-medium leading-snug text-white/95 sm:text-[15px]">
-                      {card.caption}
-                    </span>
-                    <span className="shrink-0 rounded-md bg-black/50 px-2 py-1 font-mono text-[11px] tracking-[0.06em] text-white/80 backdrop-blur-sm">
-                      {card.timecode}
-                    </span>
-                  </figcaption>
                 </div>
+
+                {/* Dedicated dark cinema caption strip — zero text-on-text collision */}
+                <figcaption className="flex items-center justify-between gap-4 border-t border-white/10 bg-[#141313] px-5 py-4 text-white">
+                  <span className="text-[14px] font-medium leading-snug text-white/95 sm:text-[15px]">
+                    {card.caption}
+                  </span>
+                  <span className="shrink-0 rounded-md border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[11px] tracking-[0.06em] text-white/80">
+                    {card.timecode}
+                  </span>
+                </figcaption>
               </figure>
             ))}
           </div>

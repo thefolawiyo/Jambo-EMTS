@@ -227,21 +227,21 @@ export function ToolkitBentoSection() {
 
                 {/* 3 KPI Boxes */}
                 <div className="mt-6 grid grid-cols-3 gap-2">
-                  <div className="rounded-[16px] border-[0.5px] border-[#807e7e] px-4 py-2">
+                  <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">REVENUE</p>
-                    <p className="mt-1 font-serif-display text-[24px] leading-[32px] text-white">
+                    <p className="mt-1 truncate font-serif-display text-[18px] leading-[24px] text-white sm:text-[24px] sm:leading-[32px]">
                       $184,210
                     </p>
                   </div>
-                  <div className="rounded-[16px] border-[0.5px] border-[#807e7e] px-4 py-2">
+                  <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">SOLD</p>
-                    <p className="mt-1 font-serif-display text-[24px] leading-[32px] text-white">
+                    <p className="mt-1 truncate font-serif-display text-[18px] leading-[24px] text-white sm:text-[24px] sm:leading-[32px]">
                       4,128
                     </p>
                   </div>
-                  <div className="rounded-[16px] border-[0.5px] border-[#807e7e] px-4 py-2">
+                  <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">CONVERSION</p>
-                    <p className="mt-1 font-serif-display text-[24px] leading-[32px] text-white">
+                    <p className="mt-1 truncate font-serif-display text-[18px] leading-[24px] text-white sm:text-[24px] sm:leading-[32px]">
                       38%
                     </p>
                   </div>

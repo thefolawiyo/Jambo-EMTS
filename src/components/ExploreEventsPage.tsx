@@ -164,19 +164,21 @@ export function ExploreEventsPage({
         <section className="bg-white pb-12 pt-12 lg:pt-20">
           <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
             {/* Search + Filter Dropdowns Row (Figma 147:2748) */}
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              {/* Left Combined Search Bar (w-[640px] h-[48px]) */}
-              <div className="flex h-[48px] w-full items-center rounded-[12px] border-[0.5px] border-[#e7e5e5] bg-white px-4 lg:max-w-[640px]">
+            <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-between">
+              {/* Left Combined Search Bar (stacked on mobile, inline on sm+) */}
+              <div className="flex w-full flex-col rounded-[12px] border-[0.5px] border-[#e7e5e5] bg-white sm:h-[48px] sm:flex-row sm:items-center sm:px-4 lg:max-w-[640px]">
                 {/* Scope Dropdown */}
-                <div className="relative shrink-0">
+                <div className="relative shrink-0 border-b border-[#e7e5e5] sm:border-b-0">
                   <button
                     type="button"
                     onClick={() => toggleDropdown('scope')}
-                    className="flex cursor-pointer items-center gap-2"
+                    className="flex min-h-[46px] w-full cursor-pointer items-center justify-between gap-2 px-4 sm:min-h-0 sm:w-auto sm:justify-start sm:px-0"
                   >
-                    <img src="/assets/f0b57.svg" alt="" className="size-5 shrink-0" />
-                    <span className="whitespace-nowrap text-[14px] font-semibold leading-[20px] text-[#2e2e2e]">
-                      {selectedScope}
+                    <span className="flex items-center gap-2">
+                      <img src="/assets/f0b57.svg" alt="" className="size-5 shrink-0" />
+                      <span className="whitespace-nowrap text-[14px] font-semibold leading-[20px] text-[#2e2e2e]">
+                        {selectedScope}
+                      </span>
                     </span>
                     <img
                       src="/assets/ce1e2.svg"
@@ -187,7 +189,7 @@ export function ExploreEventsPage({
                     />
                   </button>
                   {openDropdown === 'scope' && (
-                    <div className="absolute left-0 top-10 z-30 w-44 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg">
+                    <div className="absolute left-0 top-12 z-30 w-48 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg sm:top-10 sm:w-44">
                       {SCOPE_OPTIONS.map((opt) => (
                         <button
                           key={opt}
@@ -196,7 +198,7 @@ export function ExploreEventsPage({
                             setSelectedScope(opt);
                             setOpenDropdown(null);
                           }}
-                          className={`block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
                             selectedScope === opt
                               ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
                               : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
@@ -209,40 +211,40 @@ export function ExploreEventsPage({
                   )}
                 </div>
 
-                {/* Vertical Divider */}
-                <div className="mx-4 h-6 w-px shrink-0">
+                {/* Vertical Divider (sm+) */}
+                <div className="mx-4 hidden h-6 w-px shrink-0 sm:block">
                   <img src="/assets/83d43.svg" alt="" className="h-full w-full" />
                 </div>
 
                 {/* Search Input */}
-                <div className="flex flex-1 items-center gap-3">
+                <div className="flex min-h-[46px] flex-1 items-center gap-3 px-4 sm:min-h-0 sm:px-0">
                   <img src="/assets/2b194.svg" alt="" className="size-5 shrink-0" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by event name, venues, artists…"
-                    className="w-full bg-transparent text-[14px] leading-[20px] text-[#2e2e2e] placeholder:text-[#807e7e] focus:outline-none"
+                    className="h-full w-full bg-transparent py-2.5 text-[14px] leading-[20px] text-[#2e2e2e] placeholder:text-[#807e7e] focus:outline-none sm:py-0"
                   />
                 </div>
               </div>
 
-              {/* Right Filter Controls: Location, Price, Date (Figma 147:2747) */}
-              <div className="flex flex-wrap items-center gap-4">
+              {/* Right Filter Controls: Location, Price, Date (balanced 3-col grid on mobile) */}
+              <div className="grid grid-cols-[1.22fr_1fr_1fr] gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
                 {/* Location Filter */}
-                <div className="relative">
+                <div className="relative min-w-0">
                   <button
                     type="button"
                     onClick={() => toggleDropdown('location')}
-                    className={`flex h-[48px] min-w-[144px] cursor-pointer items-center justify-between gap-2 rounded-[12px] border-[0.5px] bg-white px-4 text-[14px] leading-[20px] transition-colors hover:bg-[#fafafa] ${
+                    className={`flex h-[48px] w-full cursor-pointer items-center justify-between gap-1 rounded-[12px] border-[0.5px] bg-white px-2 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[144px] sm:gap-2 sm:px-4 sm:text-[14px] ${
                       selectedLocation !== 'All cities'
                         ? 'border-[#ff5200] text-[#2e2e2e]'
                         : 'border-[#e7e5e5] text-[#807e7e]'
                     }`}
                   >
-                    <span className="flex items-center gap-2">
+                    <span className="flex min-w-0 items-center gap-1 sm:gap-2">
                       <img src="/assets/0d2e0.svg" alt="" className="size-4 shrink-0" />
-                      <span className="whitespace-nowrap">
+                      <span className="truncate whitespace-nowrap">
                         {selectedLocation === 'All cities' ? 'Location' : selectedLocation}
                       </span>
                     </span>
@@ -255,7 +257,7 @@ export function ExploreEventsPage({
                     />
                   </button>
                   {openDropdown === 'location' && (
-                    <div className="absolute right-0 top-13 z-30 w-44 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg">
+                    <div className="absolute left-0 top-13 z-30 w-44 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg sm:left-auto sm:right-0">
                       {CITIES.map((city) => (
                         <button
                           key={city}
@@ -264,7 +266,7 @@ export function ExploreEventsPage({
                             setSelectedLocation(city);
                             setOpenDropdown(null);
                           }}
-                          className={`block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
                             selectedLocation === city
                               ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
                               : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
@@ -278,19 +280,19 @@ export function ExploreEventsPage({
                 </div>
 
                 {/* Price Filter */}
-                <div className="relative">
+                <div className="relative min-w-0">
                   <button
                     type="button"
                     onClick={() => toggleDropdown('price')}
-                    className={`flex h-[48px] min-w-[136px] cursor-pointer items-center justify-between gap-2 rounded-[12px] border-[0.5px] bg-white px-4 text-[14px] leading-[20px] transition-colors hover:bg-[#fafafa] ${
+                    className={`flex h-[48px] w-full cursor-pointer items-center justify-between gap-1.5 rounded-[12px] border-[0.5px] bg-white px-2.5 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[136px] sm:gap-2 sm:px-4 sm:text-[14px] ${
                       selectedPrice !== 'All prices'
                         ? 'border-[#ff5200] text-[#2e2e2e]'
                         : 'border-[#e7e5e5] text-[#807e7e]'
                     }`}
                   >
-                    <span className="flex items-center gap-2">
+                    <span className="flex min-w-0 items-center gap-1.5 sm:gap-2">
                       <img src="/assets/f1448.svg" alt="" className="size-4 shrink-0" />
-                      <span className="whitespace-nowrap">
+                      <span className="truncate whitespace-nowrap">
                         {selectedPrice === 'All prices' ? 'Price' : selectedPrice}
                       </span>
                     </span>
@@ -303,7 +305,7 @@ export function ExploreEventsPage({
                     />
                   </button>
                   {openDropdown === 'price' && (
-                    <div className="absolute right-0 top-13 z-30 w-44 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg">
+                    <div className="absolute left-1/2 top-13 z-30 w-44 -translate-x-1/2 rounded-xl border border-[#e7e5e5] bg-white p-1.5 shadow-lg sm:left-auto sm:right-0 sm:translate-x-0">
                       {PRICE_OPTIONS.map((price) => (
                         <button
                           key={price}
@@ -312,7 +314,7 @@ export function ExploreEventsPage({
                             setSelectedPrice(price);
                             setOpenDropdown(null);
                           }}
-                          className={`block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
                             selectedPrice === price
                               ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
                               : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
@@ -326,19 +328,19 @@ export function ExploreEventsPage({
                 </div>
 
                 {/* Date Filter */}
-                <div className="relative">
+                <div className="relative min-w-0">
                   <button
                     type="button"
                     onClick={() => toggleDropdown('date')}
-                    className={`flex h-[48px] min-w-[136px] cursor-pointer items-center justify-between gap-2 rounded-[12px] border-[0.5px] bg-white px-4 text-[14px] leading-[20px] transition-colors hover:bg-[#fafafa] ${
+                    className={`flex h-[48px] w-full cursor-pointer items-center justify-between gap-1.5 rounded-[12px] border-[0.5px] bg-white px-2.5 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[136px] sm:gap-2 sm:px-4 sm:text-[14px] ${
                       selectedDate !== 'Any date'
                         ? 'border-[#ff5200] text-[#2e2e2e]'
                         : 'border-[#e7e5e5] text-[#807e7e]'
                     }`}
                   >
-                    <span className="flex items-center gap-2">
+                    <span className="flex min-w-0 items-center gap-1.5 sm:gap-2">
                       <img src="/assets/adf22.svg" alt="" className="size-4 shrink-0" />
-                      <span className="whitespace-nowrap">
+                      <span className="truncate whitespace-nowrap">
                         {selectedDate === 'Any date' ? 'Date' : selectedDate}
                       </span>
                     </span>
@@ -360,7 +362,7 @@ export function ExploreEventsPage({
                             setSelectedDate(opt);
                             setOpenDropdown(null);
                           }}
-                          className={`block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
+                          className={`block min-h-[40px] w-full cursor-pointer rounded-lg px-3 py-2 text-left text-[13px] transition-colors ${
                             selectedDate === opt
                               ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
                               : 'text-[#2e2e2e] hover:bg-[#f4f3f3]'
@@ -490,7 +492,7 @@ export function ExploreEventsPage({
                         onClick={handleSpotlightPrev}
                         disabled={filteredSpotlights.length <= 2}
                         aria-label="Previous featured events"
-                        className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f4f3f3] disabled:cursor-default disabled:opacity-45"
+                        className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-[#e7e5e5] bg-white transition-colors hover:bg-[#f4f3f3] disabled:cursor-default disabled:opacity-45"
                       >
                         <img src="/assets/5d4f2.svg" alt="" className="size-5" />
                       </button>
@@ -499,7 +501,7 @@ export function ExploreEventsPage({
                         onClick={handleSpotlightNext}
                         disabled={filteredSpotlights.length <= 2}
                         aria-label="Next featured events"
-                        className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white transition-colors hover:bg-[#fff2eb] disabled:cursor-default disabled:opacity-45"
+                        className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-[#e7e5e5] bg-white transition-colors hover:bg-[#fff2eb] disabled:cursor-default disabled:opacity-45"
                       >
                         <img src="/assets/15709.svg" alt="" className="size-5" />
                       </button>
@@ -669,7 +671,7 @@ export function ExploreEventsPage({
                             <button
                               type="button"
                               onClick={() => onSelectEvent(evt)}
-                              className="flex cursor-pointer items-center gap-2 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-opacity hover:opacity-80"
+                              className="-my-2 -mr-2.5 flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-colors hover:bg-[#fff2eb]"
                             >
                               <span>Get ticket</span>
                               <img
@@ -705,23 +707,23 @@ export function ExploreEventsPage({
               {/* Bottom Numbered Pagination (Figma 149:8559) */}
               <nav
                 aria-label="Pagination"
-                className="mt-14 flex items-center justify-center gap-2"
+                className="mt-14 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2"
               >
                 <button
                   type="button"
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                   aria-label="Previous page"
-                  className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f4f3f3]"
+                  className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-[#e7e5e5] bg-white transition-colors hover:bg-[#f4f3f3]"
                 >
                   <img src="/assets/5d4f2.svg" alt="" className="size-5" />
                 </button>
 
-                <div className="flex items-center gap-0.5">
+                <div className="flex items-center gap-1">
                   {PAGE_NUMBERS.map((item, idx) =>
                     item === 'ellipsis' ? (
                       <span
                         key={`ellipsis-${idx}`}
-                        className="flex size-9 items-center justify-center text-[14px] leading-[20px] text-[#807e7e]"
+                        className="flex h-11 w-6 items-center justify-center text-[14px] leading-[20px] text-[#807e7e] sm:w-9"
                       >
                         …
                       </span>
@@ -731,7 +733,9 @@ export function ExploreEventsPage({
                         type="button"
                         onClick={() => setCurrentPage(item)}
                         aria-current={currentPage === item ? 'page' : undefined}
-                        className={`flex size-9 cursor-pointer items-center justify-center rounded-[6px] text-[14px] leading-[20px] transition-colors ${
+                        className={`h-11 min-w-[36px] cursor-pointer items-center justify-center rounded-[8px] px-2 text-[14px] leading-[20px] transition-colors sm:size-11 sm:px-0 ${
+                          item === 12 || item === 13 ? 'hidden sm:flex' : 'flex'
+                        } ${
                           currentPage === item
                             ? 'bg-[#fff2eb] font-medium text-[#ff5200]'
                             : 'bg-white text-[#807e7e] hover:bg-[#f4f3f3] hover:text-[#2e2e2e]'
@@ -747,7 +751,7 @@ export function ExploreEventsPage({
                   type="button"
                   onClick={() => setCurrentPage((p) => Math.min(14, p + 1))}
                   aria-label="Next page"
-                  className="flex size-9 cursor-pointer items-center justify-center rounded-full bg-white transition-colors hover:bg-[#f4f3f3]"
+                  className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-[#e7e5e5] bg-white transition-colors hover:bg-[#f4f3f3]"
                 >
                   <img src="/assets/2c00d.svg" alt="" className="size-5" />
                 </button>

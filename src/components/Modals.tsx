@@ -22,6 +22,9 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Get tickets for ${event.title}`}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs"
       onClick={onClose}
     >
@@ -35,7 +38,7 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute right-3 top-3 flex size-8 cursor-pointer items-center justify-center rounded-full bg-white/90 text-[18px] text-[#2e2e2e] shadow hover:bg-white"
+            className="absolute right-3 top-3 flex size-11 cursor-pointer items-center justify-center rounded-full bg-white/95 text-[20px] text-[#2e2e2e] shadow hover:bg-white"
           >
             ×
           </button>
@@ -78,19 +81,21 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
                     {event.priceValue === 0 ? 'Free' : `₦${event.priceValue.toLocaleString()}`}
                   </p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <button
                     type="button"
+                    aria-label="Decrease ticket quantity"
                     onClick={() => setQty((q) => Math.max(1, q - 1))}
-                    className="flex size-8 cursor-pointer items-center justify-center rounded-lg border border-[#d4d2d2] text-[#2e2e2e] hover:bg-[#f4f3f3]"
+                    className="flex size-11 cursor-pointer items-center justify-center rounded-xl border border-[#d4d2d2] text-[18px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
                   >
                     −
                   </button>
-                  <span className="w-5 text-center text-[14px] font-medium">{qty}</span>
+                  <span className="w-6 text-center text-[15px] font-medium">{qty}</span>
                   <button
                     type="button"
+                    aria-label="Increase ticket quantity"
                     onClick={() => setQty((q) => Math.min(10, q + 1))}
-                    className="flex size-8 cursor-pointer items-center justify-center rounded-lg border border-[#d4d2d2] text-[#2e2e2e] hover:bg-[#f4f3f3]"
+                    className="flex size-11 cursor-pointer items-center justify-center rounded-xl border border-[#d4d2d2] text-[18px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
                   >
                     +
                   </button>
@@ -141,6 +146,9 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={isCreate ? 'Create your event' : 'Sign in to Jambo'}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs"
       onClick={onClose}
     >
@@ -148,7 +156,7 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
         className="w-full max-w-md rounded-[24px] border border-[#e7e5e5] bg-white p-6 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-3">
           <div>
             <h3 className="font-serif-display text-[28px] leading-[34px] text-[#2e2e2e]">
               {isCreate ? 'Create your event' : 'Welcome back to Jambo'}
@@ -163,7 +171,7 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="flex size-8 cursor-pointer items-center justify-center rounded-full text-[18px] text-[#807e7e] hover:bg-[#f4f3f3] hover:text-[#2e2e2e]"
+            className="flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full text-[20px] text-[#807e7e] hover:bg-[#f4f3f3] hover:text-[#2e2e2e]"
           >
             ×
           </button>
