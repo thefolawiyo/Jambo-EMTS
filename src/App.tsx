@@ -12,6 +12,8 @@ import { ExploreEventsPage } from './components/ExploreEventsPage';
 import { EventDetailsPage } from './components/EventDetailsPage';
 import { SelectAccountTypePage } from './components/SelectAccountTypePage';
 import { AboutPage } from './components/AboutPage';
+import { CookiePolicyPage } from './components/CookiePolicyPage';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { ActionModal, TicketModal } from './components/Modals';
 import {
   EXPLORE_ALL_EVENTS,
@@ -21,7 +23,7 @@ import {
   type EventItem,
 } from './data/jamboData';
 
-type PageRoute = 'home' | 'explore' | 'event-details' | 'get-started' | 'about';
+type PageRoute = 'home' | 'explore' | 'event-details' | 'get-started' | 'about' | 'cookie-policy';
 
 const ALL_CATALOG_EVENTS: EventItem[] = [...SPOTLIGHT_EVENTS, ...EXPLORE_ALL_EVENTS];
 
@@ -37,6 +39,9 @@ function getInitialRoute(): { page: PageRoute; event: EventItem | null } {
   if (hash === '#/about') {
     return { page: 'about', event: null };
   }
+  if (hash === '#/cookie-policy') {
+    return { page: 'cookie-policy', event: null };
+  }
   if (hash.startsWith('#/event/')) {
     const id = hash.slice('#/event/'.length);
     const found = findEventById(id);
@@ -51,9 +56,9 @@ function getInitialRoute(): { page: PageRoute; event: EventItem | null } {
 export default function App() {
   const initial = getInitialRoute();
   const [page, setPage] = useState<PageRoute>(initial.page);
-  const [previousPage, setPreviousPage] = useState<'home' | 'explore' | 'event-details' | 'about'>(
-    'home',
-  );
+  const [previousPage, setPreviousPage] = useState<
+    'home' | 'explore' | 'event-details' | 'about' | 'cookie-policy'
+  >('home');
   const [activeEvent, setActiveEvent] = useState<EventItem | null>(initial.event);
   const [activeDetailsVariant, setActiveDetailsVariant] = useState<EventDetailsVariantId>(() =>
     initial.event?.detailsVariant ?? getRandomEventDetailsVariant(),
@@ -107,6 +112,17 @@ export default function App() {
       window.location.hash = '#/about';
     }
     setPage('about');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToCookiePolicy = () => {
+    if (page !== 'cookie-policy' && page !== 'get-started') {
+      setPreviousPage(page);
+    }
+    if (window.location.hash !== '#/cookie-policy') {
+      window.location.hash = '#/cookie-policy';
+    }
+    setPage('cookie-policy');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -165,6 +181,15 @@ export default function App() {
         <SelectAccountTypePage
           onBack={handleBackFromGetStarted}
           onSignIn={() => setActionModal('signin')}
+        />
+      ) : page === 'cookie-policy' ? (
+        <CookiePolicyPage
+          onBack={handleBackFromGetStarted}
+          onNavigateHome={navigateToHome}
+          onNavigateExplore={navigateToExplore}
+          onNavigateAbout={navigateToAbout}
+          onOpenCreateModal={navigateToGetStarted}
+          onOpenSignInModal={() => setActionModal('signin')}
         />
       ) : page === 'about' ? (
         <AboutPage
@@ -251,6 +276,11 @@ export default function App() {
         key={actionModal ?? 'closed'}
         mode={actionModal}
         onClose={() => setActionModal(null)}
+      />
+
+      <CookieConsentBanner
+        onOpenCookiePolicy={navigateToCookiePolicy}
+        hideOnCookiePolicyPage={page === 'cookie-policy'}
       />
     </div>
   );

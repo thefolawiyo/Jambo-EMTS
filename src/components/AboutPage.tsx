@@ -450,7 +450,7 @@ export function AboutPage({
             <button
               type="button"
               onClick={onNavigateExplore}
-              className="inline-flex cursor-pointer items-center gap-2 rounded-[14px] border border-white/20 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-white/35 hover:bg-white/12"
+              className="btn-jambo-interactive btn-jambo-tilt-right inline-flex cursor-pointer items-center gap-2 rounded-[14px] border border-white/20 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white backdrop-blur-sm hover:border-white/35 hover:bg-white/12"
             >
               <span>See what&apos;s on</span>
             </button>
@@ -902,7 +902,7 @@ export function AboutPage({
               <button
                 type="button"
                 onClick={onOpenCreateModal}
-                className="inline-flex cursor-pointer items-center gap-2 rounded-[14px] border border-white/20 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 hover:border-white/35 hover:bg-white/12"
+                className="btn-jambo-interactive btn-jambo-tilt-right inline-flex cursor-pointer items-center gap-2 rounded-[14px] border border-white/20 bg-white/5 px-6 py-3.5 text-[15px] font-semibold text-white hover:border-white/35 hover:bg-white/12"
               >
                 <span>Host on Jambo</span>
               </button>

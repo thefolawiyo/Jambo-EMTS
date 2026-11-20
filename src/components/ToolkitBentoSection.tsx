@@ -225,24 +225,24 @@ export function ToolkitBentoSection() {
                   Revenue, conversion and door flow — visualised the moment they happen.
                 </p>
 
-                {/* 3 KPI Boxes */}
+                {/* 3 KPI Boxes (Figma 56:598) */}
                 <div className="mt-6 grid grid-cols-3 gap-2">
                   <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">REVENUE</p>
                     <p className="mt-1 truncate font-display text-[16px] font-bold leading-[22px] tracking-[-0.02em] text-white sm:text-[20px] sm:leading-[28px]">
-                      $184,210
+                      ₦186,210
                     </p>
                   </div>
                   <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">SOLD</p>
                     <p className="mt-1 truncate font-display text-[16px] font-bold leading-[22px] tracking-[-0.02em] text-white sm:text-[20px] sm:leading-[28px]">
-                      4,128
+                      3,724
                     </p>
                   </div>
                   <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">CONVERSION</p>
                     <p className="mt-1 truncate font-display text-[16px] font-bold leading-[22px] tracking-[-0.02em] text-white sm:text-[20px] sm:leading-[28px]">
-                      38%
+                      72%
                     </p>
                   </div>
                 </div>

@@ -87,19 +87,20 @@ export function HeroSection({
           </span>
         </div>
 
-        {/* Display Headline */}
-        <h1 className="font-display text-[44px] font-bold leading-[1.06] tracking-[-0.035em] text-[#2e2e2e] sm:text-[64px] md:text-[78px] md:leading-[1.03] md:tracking-[-0.04em]">
+        {/* Display Headline (Figma 30:4368 — Vend Sans Bold + Instrument Serif Italic accent) */}
+        <h1 className="font-display text-[44px] font-bold leading-[1.08] tracking-[-0.72px] text-[#2e2e2e] sm:text-[60px] md:text-[72px] md:leading-[80px]">
           <span className="block">
-            Where <em className="italic text-[#ff5200]">great</em>
+            Where{' '}
+            <em className="font-serif-brand font-normal italic text-[#ff5200]">great</em>
           </span>
           <span className="block">events come to life</span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle (Figma 30:4369) */}
         <p className="mt-6 max-w-[687px] text-[16px] font-normal leading-[24px] text-[#807e7e]">
-          Discover unforgettable events and sell out your own. Jambo is the all-in-one ticketing and
-          event platform built for the moments people remember. Discover what&apos;s on, book in
-          seconds, and run shows your audience will rave about.
+          Jambo is the all-in-one ticketing and event platform built for the moments people
+          remember. Discover what&apos;s on, book in seconds, and run shows your audience will rave
+          about.
         </p>
 
         {/* Search Bar (Figma 30:4458) */}
@@ -187,7 +188,7 @@ export function HeroSection({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="flex h-[42px] cursor-pointer items-center justify-center rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] transition-colors hover:bg-[#f4f3f3]"
+            className="btn-jambo-interactive btn-jambo-tilt-right flex h-[42px] cursor-pointer items-center justify-center rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
           >
             Create event
           </button>

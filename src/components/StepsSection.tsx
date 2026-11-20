@@ -52,14 +52,14 @@ export function StepsSection() {
               key={`${audience}-${step.number}`}
               className="flex min-h-[222px] flex-col justify-between rounded-[24px] border-[0.5px] border-[#e7e5e5] bg-white p-6"
             >
-              <span className="font-display text-[48px] font-bold leading-none tracking-[-0.04em] text-[#ff5200]">
+              <span className="font-display text-[48px] font-semibold leading-[56px] tracking-[-0.48px] text-[#ff5200]">
                 {step.number}
               </span>
               <div className="mt-6 flex flex-col gap-2">
                 <h3 className="font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                   {step.title}
                 </h3>
-                <p className="text-[14px] leading-[20px] text-[#807e7e]">{step.description}</p>
+                <p className="text-[16px] leading-[24px] text-[#807e7e]">{step.description}</p>
               </div>
             </div>
           ))}

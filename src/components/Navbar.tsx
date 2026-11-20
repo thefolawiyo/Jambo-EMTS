@@ -137,11 +137,11 @@ export function Navbar({
             }}
             className="flex min-h-[44px] cursor-pointer items-center gap-2 pr-2"
           >
-            <span className="flex size-8 items-center justify-center rounded-2xl bg-[#ff5200] font-display text-[17px] font-bold leading-none tracking-[-0.02em] text-white">
+            <span className="flex size-8 items-center justify-center rounded-2xl bg-[#ff5200] font-serif-brand text-[18px] font-normal leading-[18px] tracking-[-0.18px] text-white">
               J
             </span>
             <span
-              className={`font-display text-[19px] font-bold leading-[26px] tracking-[-0.03em] ${
+              className={`font-serif-brand text-[20px] font-normal leading-[28px] tracking-[-0.5px] ${
                 isDark ? 'text-white' : 'text-[#2e2e2e]'
               }`}
             >
@@ -299,7 +299,7 @@ export function Navbar({
             <button
               type="button"
               onClick={onOpenSignInModal}
-              className={`hidden cursor-pointer rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] transition-colors sm:inline-flex ${
+              className={`btn-jambo-interactive btn-jambo-tilt-right hidden cursor-pointer rounded-[12px] px-[18px] py-[11px] text-[14px] font-semibold leading-[20px] sm:inline-flex ${
                 isDark
                   ? 'bg-white/10 text-white backdrop-blur-sm hover:bg-white/15'
                   : 'bg-white text-[#2e2e2e] hover:bg-[#f4f3f3]'

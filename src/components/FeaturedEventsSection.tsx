@@ -111,7 +111,7 @@ export function FeaturedEventsSection({
             <button
               type="button"
               onClick={onBrowseAllEvents}
-              className="flex h-[42px] cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] transition-colors hover:bg-[#f4f3f3]"
+              className="btn-jambo-interactive flex h-[42px] cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
             >
               <span>Browse all events</span>
               <img src="/assets/5fa6b.svg" alt="" className="size-4" />

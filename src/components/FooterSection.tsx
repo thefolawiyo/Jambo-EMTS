@@ -138,7 +138,7 @@ export function FooterSection({ onNavigateAbout }: FooterSectionProps = {}) {
             />
             <button
               type="submit"
-              className="flex h-[42px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-[#2e2e2e] px-[18px] text-[14px] font-semibold leading-[20px] text-white transition-colors hover:bg-[#1f1f1f]"
+              className="btn-jambo-interactive flex h-[42px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-[#2e2e2e] px-[18px] text-[14px] font-semibold leading-[20px] text-white hover:bg-[#1f1f1f]"
             >
               <span>{subscribed ? 'Subscribed' : 'Subscribe'}</span>
               <img src="/assets/b9518.svg" alt="" className="size-4" />
