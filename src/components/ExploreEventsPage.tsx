@@ -408,31 +408,30 @@ export function ExploreEventsPage({
                           />
                         </div>
 
-                        <div className="flex flex-1 flex-col p-4 pt-6">
+                        <div className="flex flex-1 flex-col p-4 pb-5 pt-6">
                           <h3
                             title={evt.title}
-                            className="truncate font-display text-[19px] font-semibold leading-[26px] tracking-[-0.02em] text-[#2e2e2e] sm:text-[20px] sm:leading-[28px]"
+                            className="truncate font-display text-[20px] font-medium leading-[28px] tracking-[-0.015em] text-[#2e2e2e]"
                           >
                             {evt.title}
                           </h3>
 
-                          <div className="mt-4 flex flex-col gap-2">
+                          <div className="mt-6 flex flex-col gap-2">
                             <div className="flex items-center gap-2">
                               <img src="/assets/a4515.svg" alt="" className="size-6 shrink-0" />
-                              <span className="truncate text-[13px] leading-[20px] text-[#807e7e]">
+                              <span className="truncate text-[14px] font-normal leading-[20px] text-[#807e7e]">
                                 {evt.date}
                               </span>
                             </div>
                             <div className="flex items-center gap-2">
                               <img src="/assets/ab538.svg" alt="" className="size-6 shrink-0" />
-                              <span className="truncate text-[13px] leading-[20px] text-[#807e7e]">
+                              <span className="truncate text-[14px] font-normal leading-[20px] text-[#807e7e]">
                                 {evt.venue}
                               </span>
                             </div>
                           </div>
 
-                          <div className="mt-6 pt-4">
-                            <img src="/assets/d2a34.svg" alt="" className="mb-4 w-full" />
+                          <div className="mt-6 border-t border-[#e7e5e5] pt-4">
                             <div className="flex items-center justify-between">
                               <p className="text-[14px] leading-[20px] text-[#2e2e2e]">
                                 {evt.pricePrefix && (
@@ -445,8 +444,11 @@ export function ExploreEventsPage({
 
                               <button
                                 type="button"
-                                onClick={() => onSelectEvent(evt)}
-                                className="flex cursor-pointer items-center gap-2 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-opacity hover:opacity-80"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onSelectEvent(evt);
+                                }}
+                                className="-my-2 -mr-2.5 flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-colors hover:bg-[#fff2eb]"
                               >
                                 <span>Get ticket</span>
                                 <img
@@ -633,31 +635,30 @@ export function ExploreEventsPage({
                         />
                       </div>
 
-                      <div className="flex flex-1 flex-col p-4 pt-6">
+                      <div className="flex flex-1 flex-col p-4 pb-5 pt-6">
                         <h3
                           title={evt.title}
-                          className="truncate font-display text-[19px] font-semibold leading-[26px] tracking-[-0.02em] text-[#2e2e2e] sm:text-[20px] sm:leading-[28px]"
+                          className="truncate font-display text-[20px] font-medium leading-[28px] tracking-[-0.015em] text-[#2e2e2e]"
                         >
                           {evt.title}
                         </h3>
 
-                        <div className="mt-4 flex flex-col gap-2">
+                        <div className="mt-6 flex flex-col gap-2">
                           <div className="flex items-center gap-2">
                             <img src="/assets/a4515.svg" alt="" className="size-6 shrink-0" />
-                            <span className="truncate text-[13px] leading-[20px] text-[#807e7e]">
+                            <span className="truncate text-[14px] font-normal leading-[20px] text-[#807e7e]">
                               {evt.date}
                             </span>
                           </div>
                           <div className="flex items-center gap-2">
                             <img src="/assets/ab538.svg" alt="" className="size-6 shrink-0" />
-                            <span className="truncate text-[13px] leading-[20px] text-[#807e7e]">
+                            <span className="truncate text-[14px] font-normal leading-[20px] text-[#807e7e]">
                               {evt.venue}
                             </span>
                           </div>
                         </div>
 
-                        <div className="mt-6 pt-4">
-                          <img src="/assets/d2a34.svg" alt="" className="mb-4 w-full" />
+                        <div className="mt-6 border-t border-[#e7e5e5] pt-4">
                           <div className="flex items-center justify-between">
                             <p className="text-[14px] leading-[20px] text-[#2e2e2e]">
                               {evt.pricePrefix && (
@@ -670,7 +671,10 @@ export function ExploreEventsPage({
 
                             <button
                               type="button"
-                              onClick={() => onSelectEvent(evt)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onSelectEvent(evt);
+                              }}
                               className="-my-2 -mr-2.5 flex min-h-[44px] cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[14px] font-medium leading-[20px] text-[#ff5200] transition-colors hover:bg-[#fff2eb]"
                             >
                               <span>Get ticket</span>
