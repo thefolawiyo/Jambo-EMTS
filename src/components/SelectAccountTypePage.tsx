@@ -142,7 +142,7 @@ export function SelectAccountTypePage({
             <button
               type="button"
               onClick={handleContinue}
-              className="btn-jambo-primary flex h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-[20px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+              className="btn-jambo-primary flex h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
             >
               <span>Continue</span>
               <img src="/assets/b9518.svg" alt="" className="size-4" />

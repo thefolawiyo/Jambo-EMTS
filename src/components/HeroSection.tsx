@@ -168,7 +168,7 @@ export function HeroSection({
           {/* Search Submit Button */}
           <button
             type="submit"
-            className="btn-jambo-primary flex h-[46px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[20px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+            className="btn-jambo-primary flex h-[46px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
           >
             <span>Search</span>
             <img src="/assets/b9518.svg" alt="" className="size-4" />
@@ -180,7 +180,7 @@ export function HeroSection({
           <button
             type="button"
             onClick={onNavigateExplore}
-            className="btn-jambo-primary flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[20px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
+            className="btn-jambo-primary flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[15px] px-[18px] text-[14px] font-semibold leading-[20px] text-white"
           >
             <span>Explore events</span>
             <img src="/assets/b9518.svg" alt="" className="size-4" />
@@ -188,7 +188,7 @@ export function HeroSection({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="btn-jambo-interactive flex h-[46px] cursor-pointer items-center justify-center rounded-[20px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
+            className="btn-jambo-interactive flex h-[46px] cursor-pointer items-center justify-center rounded-[15px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
           >
             <span>Create event</span>
           </button>

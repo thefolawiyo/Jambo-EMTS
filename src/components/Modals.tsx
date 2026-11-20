@@ -60,7 +60,7 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
               <button
                 type="button"
                 onClick={onClose}
-                className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[20px] text-[14px] font-semibold text-white"
+                className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[15px] text-[14px] font-semibold text-white"
               >
                 <span>Done</span>
               </button>
@@ -118,7 +118,7 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
 
               <button
                 type="submit"
-                className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[20px] text-[14px] font-semibold text-white"
+                className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[15px] text-[14px] font-semibold text-white"
               >
                 <span>
                   {total === 0
@@ -192,7 +192,7 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
             <button
               type="button"
               onClick={onClose}
-              className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[20px] text-[14px] font-semibold text-white"
+              className="btn-jambo-primary mt-6 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[15px] text-[14px] font-semibold text-white"
             >
               Continue
             </button>
@@ -227,7 +227,7 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
             </div>
             <button
               type="submit"
-              className="btn-jambo-primary mt-2 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[20px] text-[14px] font-semibold text-white"
+              className="btn-jambo-primary mt-2 flex h-[46px] w-full cursor-pointer items-center justify-center rounded-[15px] text-[14px] font-semibold text-white"
             >
               {isCreate ? 'Start for free' : 'Continue with Email'}
             </button>

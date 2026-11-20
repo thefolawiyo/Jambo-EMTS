@@ -236,7 +236,7 @@ export function ExploreEventsPage({
                   <button
                     type="button"
                     onClick={() => toggleDropdown('location')}
-                    className={`btn-smooth-corner flex h-[46px] w-full cursor-pointer items-center justify-between gap-1 rounded-[20px] border-[0.5px] bg-white px-2 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[144px] sm:gap-2 sm:px-4 sm:text-[14px] ${
+                    className={`btn-smooth-corner flex h-[46px] w-full cursor-pointer items-center justify-between gap-1 rounded-[15px] border-[0.5px] bg-white px-2 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[144px] sm:gap-2 sm:px-4 sm:text-[14px] ${
                       selectedLocation !== 'All cities'
                         ? 'border-[#ff5200] text-[#2e2e2e]'
                         : 'border-[#e7e5e5] text-[#807e7e]'
@@ -284,7 +284,7 @@ export function ExploreEventsPage({
                   <button
                     type="button"
                     onClick={() => toggleDropdown('price')}
-                    className={`btn-smooth-corner flex h-[46px] w-full cursor-pointer items-center justify-between gap-1.5 rounded-[20px] border-[0.5px] bg-white px-2.5 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[136px] sm:gap-2 sm:px-4 sm:text-[14px] ${
+                    className={`btn-smooth-corner flex h-[46px] w-full cursor-pointer items-center justify-between gap-1.5 rounded-[15px] border-[0.5px] bg-white px-2.5 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[136px] sm:gap-2 sm:px-4 sm:text-[14px] ${
                       selectedPrice !== 'All prices'
                         ? 'border-[#ff5200] text-[#2e2e2e]'
                         : 'border-[#e7e5e5] text-[#807e7e]'
@@ -332,7 +332,7 @@ export function ExploreEventsPage({
                   <button
                     type="button"
                     onClick={() => toggleDropdown('date')}
-                    className={`btn-smooth-corner flex h-[46px] w-full cursor-pointer items-center justify-between gap-1.5 rounded-[20px] border-[0.5px] bg-white px-2.5 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[136px] sm:gap-2 sm:px-4 sm:text-[14px] ${
+                    className={`btn-smooth-corner flex h-[46px] w-full cursor-pointer items-center justify-between gap-1.5 rounded-[15px] border-[0.5px] bg-white px-2.5 text-[13px] leading-[20px] transition-colors hover:bg-[#fafafa] sm:w-auto sm:min-w-[136px] sm:gap-2 sm:px-4 sm:text-[14px] ${
                       selectedDate !== 'Any date'
                         ? 'border-[#ff5200] text-[#2e2e2e]'
                         : 'border-[#e7e5e5] text-[#807e7e]'
@@ -701,7 +701,7 @@ export function ExploreEventsPage({
                   <button
                     type="button"
                     onClick={handleResetFilters}
-                    className="btn-jambo-primary mt-5 inline-flex h-[46px] cursor-pointer items-center justify-center rounded-[20px] px-5 text-[14px] font-semibold text-white"
+                    className="btn-jambo-primary mt-5 inline-flex h-[46px] cursor-pointer items-center justify-center rounded-[15px] px-5 text-[14px] font-semibold text-white"
                   >
                     <span>Reset all filters</span>
                   </button>

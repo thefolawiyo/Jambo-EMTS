@@ -78,7 +78,7 @@ export function FeaturedEventsSection({
               <button
                 type="button"
                 onClick={() => setCityOpen((prev) => !prev)}
-                className="btn-smooth-corner flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[20px] border border-[#d4d2d2] bg-white px-[18px] text-[14px] font-medium leading-[20px] text-[#2e2e2e] transition-colors hover:bg-[#f4f3f3]"
+                className="btn-smooth-corner flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[15px] border border-[#d4d2d2] bg-white px-[18px] text-[14px] font-medium leading-[20px] text-[#2e2e2e] transition-colors hover:bg-[#f4f3f3]"
               >
                 <img src="/assets/aea1a.svg" alt="" className="size-5" />
                 <span>{selectedCity}</span>
@@ -111,7 +111,7 @@ export function FeaturedEventsSection({
             <button
               type="button"
               onClick={onBrowseAllEvents}
-              className="btn-jambo-interactive flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[20px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
+              className="btn-jambo-interactive flex h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[15px] bg-white px-[18px] text-[14px] font-semibold leading-[20px] text-[#2e2e2e] hover:bg-[#f4f3f3]"
             >
               <span>Browse all events</span>
               <img src="/assets/5fa6b.svg" alt="" className="size-4" />
@@ -129,7 +129,7 @@ export function FeaturedEventsSection({
                   key={pill.id}
                   type="button"
                   onClick={() => setActiveCategory(pill.id)}
-                  className={`btn-smooth-corner flex h-[46px] shrink-0 cursor-pointer items-center gap-2 rounded-[20px] px-4 text-[14px] font-medium leading-[20px] transition-all ${
+                  className={`btn-smooth-corner flex h-[46px] shrink-0 cursor-pointer items-center gap-2 rounded-[15px] px-4 text-[14px] font-medium leading-[20px] transition-all ${
                     isActive
                       ? 'btn-jambo-primary text-white'
                       : 'border-[0.5px] border-[#d4d2d2] bg-white text-[#2e2e2e] hover:border-[#2e2e2e]/40 hover:bg-[#fafafa]'
@@ -260,7 +260,7 @@ export function FeaturedEventsSection({
             <button
               type="button"
               onClick={handleResetFilters}
-              className="btn-jambo-primary mt-5 inline-flex h-[46px] cursor-pointer items-center justify-center rounded-[20px] px-5 text-[14px] font-semibold text-white"
+              className="btn-jambo-primary mt-5 inline-flex h-[46px] cursor-pointer items-center justify-center rounded-[15px] px-5 text-[14px] font-semibold text-white"
             >
               <span>Show all featured events</span>
             </button>
