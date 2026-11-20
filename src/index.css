@@ -1,5 +1,85 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vend Sans';
+  src: url('/fonts/VendSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --ink: #2e2e2e;
   --muted: #807e7e;
@@ -8,23 +88,25 @@
   --surface: #ffffff;
   --surface-muted: #f4f3f3;
   --orange-500: #ff5200;
+  --font-vend: 'Vend Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-vend);
     color: var(--ink);
     background-color: var(--surface);
   }
 }
 
-.font-serif-display {
-  font-family: 'Instrument Serif', Georgia, serif;
+.font-serif-display,
+.font-display {
+  font-family: var(--font-vend);
 }
 
 .font-sans-body {
-  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-vend);
 }
 
 .btn-jambo-primary {

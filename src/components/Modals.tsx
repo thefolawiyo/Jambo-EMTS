@@ -50,7 +50,7 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
               <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-[#e6faf6] text-[22px] text-[#16a571]">
                 ✓
               </span>
-              <h3 className="mt-4 font-serif-display text-[28px] leading-[34px] text-[#2e2e2e]">
+              <h3 className="mt-4 font-display text-[24px] font-bold leading-[30px] tracking-[-0.02em] text-[#2e2e2e]">
                 Tickets confirmed!
               </h3>
               <p className="mt-2 text-[14px] leading-[20px] text-[#807e7e]">
@@ -67,7 +67,7 @@ export function TicketModal({ event, onClose }: TicketModalProps) {
             </div>
           ) : (
             <form onSubmit={handleBook}>
-              <h3 className="font-serif-display text-[24px] leading-[30px] text-[#2e2e2e]">
+              <h3 className="font-display text-[20px] font-bold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                 {event.title}
               </h3>
               <p className="mt-1 text-[13px] text-[#807e7e]">
@@ -158,7 +158,7 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
       >
         <div className="flex items-start justify-between gap-3">
           <div>
-            <h3 className="font-serif-display text-[28px] leading-[34px] text-[#2e2e2e]">
+            <h3 className="font-display text-[24px] font-bold leading-[30px] tracking-[-0.02em] text-[#2e2e2e]">
               {isCreate ? 'Create your event' : 'Welcome back to Jambo'}
             </h3>
             <p className="mt-1 text-[14px] text-[#807e7e]">
@@ -179,7 +179,7 @@ export function ActionModal({ mode, onClose }: ActionModalProps) {
 
         {submitted ? (
           <div className="py-6 text-center">
-            <p className="font-serif-display text-[24px] text-[#2e2e2e]">
+            <p className="font-display text-[22px] font-bold tracking-[-0.02em] text-[#2e2e2e]">
               {isCreate ? 'Draft created!' : 'Check your inbox'}
             </p>
             <p className="mt-2 text-[14px] text-[#807e7e]">

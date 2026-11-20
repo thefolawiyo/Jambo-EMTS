@@ -32,7 +32,7 @@ export function ToolkitBentoSection() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Centered Header */}
         <div className="mx-auto max-w-[588px] text-center">
-          <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+          <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
             <span className="block">Everything you need to</span>
             <span className="block">
               run a <span className="text-[#ff5200]">flawless</span> event
@@ -59,7 +59,7 @@ export function ToolkitBentoSection() {
                     LIVE
                   </span>
                 </div>
-                <h3 className="mt-4 font-serif-display text-[24px] leading-[32px] text-[#2e2e2e]">
+                <h3 className="mt-4 font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                   Sales, as they happen
                 </h3>
                 <p className="mt-2 text-[13px] leading-[20px] text-[#807e7e]">
@@ -72,11 +72,11 @@ export function ToolkitBentoSection() {
                 <div className="flex items-center gap-14 text-[#2b3037]">
                   <div>
                     <p className="text-[13px] leading-[20px]">Events</p>
-                    <p className="font-serif-display text-[20px] leading-[28px]">8</p>
+                    <p className="font-display text-[19px] font-bold leading-[26px] tracking-[-0.02em]">8</p>
                   </div>
                   <div>
                     <p className="text-[13px] leading-[20px]">Total Sales</p>
-                    <p className="font-serif-display text-[20px] leading-[28px]">93.07%</p>
+                    <p className="font-display text-[19px] font-bold leading-[26px] tracking-[-0.02em]">93.07%</p>
                   </div>
                 </div>
 
@@ -146,7 +146,7 @@ export function ToolkitBentoSection() {
                       CHECK-IN
                     </span>
                   </div>
-                  <h3 className="mt-4 font-serif-display text-[24px] leading-[32px] text-[#2e2e2e]">
+                  <h3 className="mt-4 font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                     QR in 0.4s
                   </h3>
                   <p className="mt-2 text-[13px] leading-[20px] text-[#807e7e]">
@@ -185,7 +185,7 @@ export function ToolkitBentoSection() {
                       REVENUE
                     </span>
                   </div>
-                  <h3 className="mt-4 font-serif-display text-[24px] leading-[32px] text-[#2e2e2e]">
+                  <h3 className="mt-4 font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                     Wallet ready
                   </h3>
                   <p className="mt-2 text-[13px] leading-[20px] text-[#807e7e]">
@@ -218,7 +218,7 @@ export function ToolkitBentoSection() {
                     ANALYTICS
                   </span>
                 </div>
-                <h3 className="mt-4 font-serif-display text-[24px] leading-[32px] text-white">
+                <h3 className="mt-4 font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-white">
                   A dashboard that briefs you in 10 seconds
                 </h3>
                 <p className="mt-2 max-w-[368px] text-[13px] leading-[20px] text-[#d4d2d2]">
@@ -229,19 +229,19 @@ export function ToolkitBentoSection() {
                 <div className="mt-6 grid grid-cols-3 gap-2">
                   <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">REVENUE</p>
-                    <p className="mt-1 truncate font-serif-display text-[18px] leading-[24px] text-white sm:text-[24px] sm:leading-[32px]">
+                    <p className="mt-1 truncate font-display text-[16px] font-bold leading-[22px] tracking-[-0.02em] text-white sm:text-[20px] sm:leading-[28px]">
                       $184,210
                     </p>
                   </div>
                   <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">SOLD</p>
-                    <p className="mt-1 truncate font-serif-display text-[18px] leading-[24px] text-white sm:text-[24px] sm:leading-[32px]">
+                    <p className="mt-1 truncate font-display text-[16px] font-bold leading-[22px] tracking-[-0.02em] text-white sm:text-[20px] sm:leading-[28px]">
                       4,128
                     </p>
                   </div>
                   <div className="min-w-0 rounded-[16px] border-[0.5px] border-[#807e7e] px-2.5 py-2.5 sm:px-4 sm:py-2">
                     <p className="text-[10px] leading-[16px] text-[#d4d2d2]">CONVERSION</p>
-                    <p className="mt-1 truncate font-serif-display text-[18px] leading-[24px] text-white sm:text-[24px] sm:leading-[32px]">
+                    <p className="mt-1 truncate font-display text-[16px] font-bold leading-[22px] tracking-[-0.02em] text-white sm:text-[20px] sm:leading-[28px]">
                       38%
                     </p>
                   </div>
@@ -305,7 +305,7 @@ export function ToolkitBentoSection() {
                     TEAM
                   </span>
                 </div>
-                <h3 className="mt-4 font-serif-display text-[24px] leading-[32px] text-[#2e2e2e]">
+                <h3 className="mt-4 font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                   Collaborate without the chaos
                 </h3>
                 <p className="mt-2 max-w-[368px] text-[13px] leading-[20px] text-[#807e7e]">

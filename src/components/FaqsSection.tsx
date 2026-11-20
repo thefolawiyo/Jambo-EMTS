@@ -9,7 +9,7 @@ export function FaqsSection() {
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-12 px-6 lg:grid-cols-2 lg:gap-6 lg:px-[120px]">
         {/* Left Header */}
         <div className="max-w-[588px]">
-          <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+          <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
             <span className="block">Good questions,</span>
             <span className="block">
               <span className="text-[#ff5200]">straight</span> answers.
@@ -36,7 +36,7 @@ export function FaqsSection() {
                   aria-expanded={isOpen}
                   className="flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left transition-colors hover:bg-[#fafafa]"
                 >
-                  <span className="font-serif-display text-[20px] leading-[28px] text-[#2e2e2e]">
+                  <span className="font-display text-[16px] font-semibold leading-[24px] tracking-[-0.01em] text-[#2e2e2e] sm:text-[18px] sm:leading-[26px]">
                     {faq.question}
                   </span>
                   <img

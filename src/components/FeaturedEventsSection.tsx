@@ -63,7 +63,7 @@ export function FeaturedEventsSection({
         {/* Section Header Row */}
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-[588px]">
-            <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+            <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
               Find the rooms your people are dancing in.
             </h2>
             <p className="mt-2 text-[16px] leading-[24px] text-[#807e7e]">
@@ -200,7 +200,7 @@ export function FeaturedEventsSection({
                 <div className="flex flex-1 flex-col p-4 pt-6">
                   <h3
                     title={evt.title}
-                    className="truncate font-serif-display text-[24px] font-normal leading-[30px] tracking-[-0.24px] text-[#2e2e2e]"
+                    className="truncate font-display text-[19px] font-semibold leading-[26px] tracking-[-0.02em] text-[#2e2e2e] sm:text-[20px] sm:leading-[28px]"
                   >
                     {evt.title}
                   </h3>
@@ -251,7 +251,7 @@ export function FeaturedEventsSection({
           </div>
         ) : (
           <div className="mt-10 flex flex-col items-center justify-center rounded-[24px] border border-dashed border-[#d4d2d2] py-16 text-center">
-            <p className="font-serif-display text-[28px] text-[#2e2e2e]">No events found</p>
+            <p className="font-display text-[22px] font-bold tracking-[-0.02em] text-[#2e2e2e]">No events found</p>
             <p className="mt-2 max-w-md text-[14px] text-[#807e7e]">
               Try switching your category or city filter to discover more upcoming events on Jambo.
             </p>

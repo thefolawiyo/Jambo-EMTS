@@ -137,11 +137,11 @@ export function Navbar({
             }}
             className="flex min-h-[44px] cursor-pointer items-center gap-2 pr-2"
           >
-            <span className="flex size-8 items-center justify-center rounded-2xl bg-[#ff5200] font-serif-display text-[18px] leading-[18px] tracking-[-0.18px] text-white">
+            <span className="flex size-8 items-center justify-center rounded-2xl bg-[#ff5200] font-display text-[17px] font-bold leading-none tracking-[-0.02em] text-white">
               J
             </span>
             <span
-              className={`font-serif-display text-[20px] leading-[28px] tracking-[-0.5px] ${
+              className={`font-display text-[19px] font-bold leading-[26px] tracking-[-0.03em] ${
                 isDark ? 'text-white' : 'text-[#2e2e2e]'
               }`}
             >

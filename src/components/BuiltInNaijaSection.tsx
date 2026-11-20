@@ -6,7 +6,7 @@ export function BuiltInNaijaSection() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Header */}
         <div className="max-w-[588px]">
-          <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+          <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
             <span className="block">
               Built in <span className="text-[#ff5200]">Naija.</span>
             </span>
@@ -33,7 +33,7 @@ export function BuiltInNaijaSection() {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-2">
-                  <h3 className="font-serif-display text-[24px] leading-[32px] text-[#2e2e2e]">
+                  <h3 className="font-display text-[19px] font-semibold leading-[26px] tracking-[-0.02em] text-[#2e2e2e] sm:text-[20px] sm:leading-[28px]">
                     {feat.title}
                   </h3>
                   <p className="text-[13px] leading-[20px] text-[#807e7e]">{feat.description}</p>

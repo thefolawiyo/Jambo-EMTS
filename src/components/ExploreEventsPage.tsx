@@ -382,7 +382,7 @@ export function ExploreEventsPage({
               searchResults.length > 0 ? (
                 <div className="mt-10 min-h-[540px] pb-16">
                   <div className="flex flex-col gap-2">
-                    <h1 className="font-serif-display text-[36px] font-normal leading-[44px] text-[#2e2e2e] sm:text-[40px] sm:leading-[48px]">
+                    <h1 className="font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-[#2e2e2e] sm:text-[36px] sm:leading-[1.15]">
                       “{trimmedQuery}”
                     </h1>
                     <p className="text-[16px] leading-[24px] text-[#807e7e]">
@@ -411,7 +411,7 @@ export function ExploreEventsPage({
                         <div className="flex flex-1 flex-col p-4 pt-6">
                           <h3
                             title={evt.title}
-                            className="truncate font-serif-display text-[24px] font-normal leading-[30px] tracking-[-0.24px] text-[#2e2e2e]"
+                            className="truncate font-display text-[19px] font-semibold leading-[26px] tracking-[-0.02em] text-[#2e2e2e] sm:text-[20px] sm:leading-[28px]"
                           >
                             {evt.title}
                           </h3>
@@ -470,7 +470,7 @@ export function ExploreEventsPage({
                     alt=""
                     className="size-[200px] object-contain"
                   />
-                  <h1 className="mt-6 font-serif-display text-[36px] font-normal leading-[44px] text-[#2e2e2e] sm:text-[40px] sm:leading-[48px]">
+                  <h1 className="mt-6 font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-[#2e2e2e] sm:text-[36px] sm:leading-[1.15]">
                     No result found.
                   </h1>
                   <p className="mt-2 text-[16px] leading-[24px] text-[#807e7e]">
@@ -483,7 +483,7 @@ export function ExploreEventsPage({
               visibleSpotlights.length > 0 && (
                 <>
                   <div className="mt-12 flex items-center justify-between">
-                    <h1 className="font-serif-display text-[36px] font-normal leading-[44px] text-[#2e2e2e] sm:text-[40px] sm:leading-[48px]">
+                    <h1 className="font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-[#2e2e2e] sm:text-[36px] sm:leading-[1.15]">
                       Featured Events
                     </h1>
                     <div className="flex items-center gap-2">
@@ -532,7 +532,7 @@ export function ExploreEventsPage({
                           />
                           <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4">
                             <div className="min-w-0 flex-1">
-                              <h2 className="truncate font-serif-display text-[32px] font-normal leading-[40px] text-[#fafafa]">
+                              <h2 className="truncate font-display text-[24px] font-bold leading-[30px] tracking-[-0.02em] text-[#fafafa] sm:text-[28px] sm:leading-[34px]">
                                 {evt.title}
                               </h2>
                               <div className="mt-4 flex items-center gap-2">
@@ -576,7 +576,7 @@ export function ExploreEventsPage({
                             }}
                           />
                           <div className="absolute inset-x-8 bottom-6 flex flex-col items-center gap-4">
-                            <h2 className="w-full truncate font-serif-display text-[32px] font-normal leading-[40px] text-[#fafafa]">
+                            <h2 className="w-full truncate font-display text-[24px] font-bold leading-[30px] tracking-[-0.02em] text-[#fafafa] sm:text-[28px] sm:leading-[34px]">
                               {evt.title}
                             </h2>
                             <div className="flex items-center justify-center gap-2">
@@ -601,7 +601,7 @@ export function ExploreEventsPage({
           <section className="bg-white py-16">
             <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <h2 className="font-serif-display text-[36px] font-normal leading-[44px] text-[#2e2e2e] sm:text-[40px] sm:leading-[48px]">
+                <h2 className="font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-[#2e2e2e] sm:text-[36px] sm:leading-[1.15]">
                   All Events
                 </h2>
                 {hasActiveFilters && (
@@ -636,7 +636,7 @@ export function ExploreEventsPage({
                       <div className="flex flex-1 flex-col p-4 pt-6">
                         <h3
                           title={evt.title}
-                          className="truncate font-serif-display text-[24px] font-normal leading-[30px] tracking-[-0.24px] text-[#2e2e2e]"
+                          className="truncate font-display text-[19px] font-semibold leading-[26px] tracking-[-0.02em] text-[#2e2e2e] sm:text-[20px] sm:leading-[28px]"
                         >
                           {evt.title}
                         </h3>
@@ -688,7 +688,7 @@ export function ExploreEventsPage({
                 </div>
               ) : (
                 <div className="mt-8 flex flex-col items-center justify-center rounded-[24px] border border-dashed border-[#d4d2d2] py-16 text-center">
-                  <p className="font-serif-display text-[28px] text-[#2e2e2e]">
+                  <p className="font-display text-[22px] font-bold tracking-[-0.02em] text-[#2e2e2e]">
                     No matching events
                   </p>
                   <p className="mt-2 max-w-md text-[14px] text-[#807e7e]">

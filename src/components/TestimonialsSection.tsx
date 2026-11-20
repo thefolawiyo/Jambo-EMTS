@@ -13,7 +13,7 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
           <img src={item.avatar} alt={item.name} className="size-9 object-cover" />
         </div>
         <div className="min-w-0">
-          <p className="truncate font-serif-display text-[18px] leading-[24px] text-[#2e2e2e]">
+          <p className="truncate font-display text-[15px] font-semibold leading-[22px] tracking-[-0.01em] text-[#2e2e2e]">
             {item.name}
           </p>
           <p className="truncate text-[12px] leading-[16px] text-[#807e7e]">{item.role}</p>
@@ -29,7 +29,7 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Header */}
         <div className="mx-auto max-w-[588px] text-center">
-          <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+          <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
             Don’t just take our word
           </h2>
           <p className="mt-2 text-[16px] leading-[24px] text-[#807e7e]">

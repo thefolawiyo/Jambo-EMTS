@@ -67,7 +67,7 @@ export function SelectAccountTypePage({
 
           {/* Heading & Subtitle */}
           <div className="mt-10 flex flex-col gap-2">
-            <h1 className="font-serif-display text-[32px] font-normal leading-[40px] text-[#2e2e2e]">
+            <h1 className="font-display text-[28px] font-bold leading-[1.2] tracking-[-0.025em] text-[#2e2e2e] sm:text-[32px]">
               Select Account Type
             </h1>
             <p className="text-[16px] font-normal leading-[24px] text-[#807e7e]">

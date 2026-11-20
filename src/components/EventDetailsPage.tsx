@@ -77,7 +77,7 @@ function DirectionMapCard({ address }: { address: string }) {
   return (
     <div className="flex w-full flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h2 className="font-serif-display text-[24px] font-normal leading-[32px] text-[#2e2e2e]">
+        <h2 className="font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
           Direction
         </h2>
         <a
@@ -111,7 +111,7 @@ function HostedByBlock({ organizerName }: { organizerName: string }) {
 
   return (
     <div className="flex w-full flex-col gap-4">
-      <h2 className="font-serif-display text-[24px] font-normal leading-[32px] text-[#2e2e2e]">
+      <h2 className="font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
         Hosted by
       </h2>
       <div className="flex flex-wrap items-center justify-between gap-4">
@@ -228,7 +228,7 @@ export function EventDetailsPage({
           {/* Title + Meta + Report Row */}
           <div className="mt-10 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
             <div className="flex flex-col gap-2">
-              <h1 className="font-serif-display text-[36px] font-normal leading-[44px] text-[#2e2e2e] sm:text-[40px] sm:leading-[48px]">
+              <h1 className="font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-[#2e2e2e] sm:text-[36px] sm:leading-[1.15]">
                 {event.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4">
@@ -260,7 +260,7 @@ export function EventDetailsPage({
             {/* Left: About this event + Get ticket */}
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-4">
-                <h2 className="font-serif-display text-[24px] font-normal leading-[32px] text-[#2e2e2e]">
+                <h2 className="font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                   About this event
                 </h2>
                 {descriptionBlock}
@@ -329,7 +329,7 @@ export function EventDetailsPage({
               }}
             />
             <div className="absolute inset-x-6 bottom-8 flex flex-col gap-3 lg:inset-x-12 lg:bottom-12">
-              <h1 className="font-serif-display text-[36px] font-normal leading-[44px] text-white sm:text-[40px] sm:leading-[48px]">
+              <h1 className="font-display text-[28px] font-bold leading-[1.18] tracking-[-0.025em] text-white sm:text-[36px] sm:leading-[1.15]">
                 {event.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4">

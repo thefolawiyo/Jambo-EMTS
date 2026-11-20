@@ -88,7 +88,7 @@ export function HeroSection({
         </div>
 
         {/* Display Headline */}
-        <h1 className="font-serif-display text-[64px] font-normal leading-[1] tracking-[-2px] text-[#2e2e2e] sm:text-[92px] md:text-[120px] md:leading-[120px] md:tracking-[-3px]">
+        <h1 className="font-display text-[44px] font-bold leading-[1.06] tracking-[-0.035em] text-[#2e2e2e] sm:text-[64px] md:text-[78px] md:leading-[1.03] md:tracking-[-0.04em]">
           <span className="block">
             Where <em className="italic text-[#ff5200]">great</em>
           </span>
@@ -206,7 +206,7 @@ export function HeroSection({
               </div>
               <div className="text-left">
                 <p className="text-[13px] leading-[20px] text-[#807e7e]">Tickets sold</p>
-                <p className="font-serif-display text-[20px] leading-[28px] text-[#2e2e2e]">
+                <p className="font-display text-[18px] font-bold leading-[26px] tracking-[-0.02em] text-[#2e2e2e]">
                   250K+
                 </p>
               </div>
@@ -219,7 +219,7 @@ export function HeroSection({
               <div className="flex items-start justify-between">
                 <div className="text-left">
                   <p className="text-[13px] leading-[20px] text-[#807e7e]">Rave · LAGOS</p>
-                  <p className="font-serif-display text-[20px] leading-[28px] text-[#2e2e2e]">
+                  <p className="font-display text-[18px] font-bold leading-[26px] tracking-[-0.02em] text-[#2e2e2e]">
                     Group Therapy
                   </p>
                   <p className="text-[12px] leading-[16px] text-[#807e7e]">
@@ -256,7 +256,7 @@ export function HeroSection({
               </div>
               <div className="text-left">
                 <p className="text-[13px] leading-[20px] text-[#807e7e]">Events hosted</p>
-                <p className="font-serif-display text-[20px] leading-[28px] text-[#2e2e2e]/75">
+                <p className="font-display text-[18px] font-bold leading-[26px] tracking-[-0.02em] text-[#2e2e2e]/75">
                   317
                 </p>
               </div>

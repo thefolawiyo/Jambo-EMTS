@@ -420,7 +420,7 @@ export function AboutPage({
             </span>
           </div>
 
-          <h1 className="mt-7 font-serif-display text-[clamp(2.85rem,7.8vw,6.25rem)] font-normal leading-[0.98] tracking-[-0.03em] text-white">
+          <h1 className="mt-7 font-display text-[clamp(2.5rem,6.5vw,5rem)] font-bold leading-[1.03] tracking-[-0.035em] text-white">
             We grew up where the music{' '}
             <span className="bg-gradient-to-r from-[#ff944d] via-[#ff6a2b] to-[#f03e2e] bg-clip-text italic text-transparent">
               never stops.
@@ -491,7 +491,7 @@ export function AboutPage({
           <div className="animate-about-marquee flex w-max items-center gap-8">
             {[...CULTURE_TAGS, ...CULTURE_TAGS].map((tag, idx) => (
               <div key={`${tag}-${idx}`} className="flex items-center gap-8">
-                <span className="cursor-default font-serif-display text-[24px] tracking-[-0.01em] text-white/80 transition-colors duration-200 hover:text-[#ff7a33] sm:text-[28px]">
+                <span className="cursor-default font-display text-[20px] font-semibold tracking-[-0.02em] text-white/80 transition-colors duration-200 hover:text-[#ff7a33] sm:text-[24px]">
                   {tag}
                 </span>
                 <span className="text-[14px] text-[#ff5200]" aria-hidden="true">
@@ -521,7 +521,7 @@ export function AboutPage({
               The origin
             </span>
 
-            <h2 className="mt-5 font-serif-display text-[clamp(2.35rem,4.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.025em] text-[#2e2e2e]">
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#2e2e2e]">
               It started on a <span className="italic text-[#ff5200]">Friday night</span> in
               Surulere.
             </h2>
@@ -626,7 +626,7 @@ export function AboutPage({
               willChange: 'transform',
             }}
           >
-            <h2 className="font-serif-display text-[clamp(2.3rem,5.2vw,4.5rem)] font-normal leading-[1.08] tracking-[-0.025em] text-[#2e2e2e]/90">
+            <h2 className="font-display text-[clamp(1.9rem,4.4vw,3.6rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e]/90">
               We believe the continent throws the loudest nights on earth — and deserves{' '}
               <span className="italic text-[#ff5200]">tools that match</span> the energy.
             </h2>
@@ -641,7 +641,7 @@ export function AboutPage({
             <span className="inline-flex items-center rounded-full border border-[#e7e5e5] bg-[#f4f3f3] px-3.5 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#2e2e2e]">
               The journey
             </span>
-            <h2 className="mt-5 font-serif-display text-[clamp(2.35rem,4.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.025em] text-[#2e2e2e]">
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#2e2e2e]">
               Five years. <span className="italic text-[#ff5200]">Eleven countries.</span> One
               stubborn idea.
             </h2>
@@ -661,7 +661,7 @@ export function AboutPage({
                 }}
               >
                 <div>
-                  <span className="block font-serif-display text-[48px] leading-none tracking-[-0.03em] text-[#ff5200] transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="block font-display text-[40px] font-bold leading-none tracking-[-0.035em] text-[#ff5200] transition-transform duration-300 group-hover:translate-x-0.5">
                     {item.year}
                   </span>
                   <h3 className="mt-5 text-[16px] font-semibold leading-snug text-[#2e2e2e]">
@@ -704,7 +704,7 @@ export function AboutPage({
           <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#ff944d]">
             Receipts
           </span>
-          <h2 className="mt-5 font-serif-display text-[clamp(2.35rem,4.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.025em] text-white">
+          <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white">
             The numbers we&apos;re{' '}
             <span className="italic text-[#ff8a47]">proud</span> of.
           </h2>
@@ -722,7 +722,7 @@ export function AboutPage({
                   transition: `opacity 600ms ease ${idx * 80}ms, transform 600ms ease ${idx * 80}ms, background-color 250ms ease`,
                 }}
               >
-                <div className="font-serif-display text-[clamp(2.75rem,4.4vw,4rem)] leading-none tracking-[-0.03em] text-white tabular-nums transition-colors duration-300 group-hover:text-[#ff8a47]">
+                <div className="font-display text-[clamp(2.4rem,4vw,3.5rem)] font-bold leading-none tracking-[-0.035em] text-white tabular-nums transition-colors duration-300 group-hover:text-[#ff8a47]">
                   {stat.format(stat.target * statProgress)}
                 </div>
                 <p className="mt-3 text-[14px] font-medium text-white/60">{stat.label}</p>
@@ -742,7 +742,7 @@ export function AboutPage({
             <span className="inline-flex items-center rounded-full border border-[#e7e5e5] bg-white px-3.5 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#ff5200]">
               Behind the scenes
             </span>
-            <h2 className="mt-5 font-serif-display text-[clamp(2.35rem,4.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.025em] text-[#2e2e2e]">
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#2e2e2e]">
               A reel from <span className="italic text-[#ff5200]">last weekend.</span>
             </h2>
           </div>
@@ -787,7 +787,7 @@ export function AboutPage({
             <span className="inline-flex items-center rounded-full border border-[#e7e5e5] bg-[#f4f3f3] px-3.5 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#2e2e2e]">
               The people
             </span>
-            <h2 className="mt-5 font-serif-display text-[clamp(2.35rem,4.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.025em] text-[#2e2e2e]">
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#2e2e2e]">
               The team in the <span className="italic text-[#ff5200]">ops room.</span>
             </h2>
             <p className="mt-4 text-[16px] leading-[1.65] text-[#807e7e]">
@@ -822,7 +822,7 @@ export function AboutPage({
                         'radial-gradient(circle at 30% 25%, rgba(255,255,255,0.75) 0%, transparent 62%)',
                     }}
                   />
-                  <span className="relative font-serif-display text-[72px] leading-none tracking-[-0.03em] text-[#2e2e2e] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
+                  <span className="relative font-display text-[60px] font-bold leading-none tracking-[-0.04em] text-[#2e2e2e] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
                     {person.initials}
                   </span>
                   <span
@@ -837,7 +837,7 @@ export function AboutPage({
                   <p className="font-mono text-[11px] font-semibold tracking-[0.1em] text-[#807e7e]">
                     {person.role}
                   </p>
-                  <h3 className="mt-1.5 font-serif-display text-[28px] leading-tight text-[#2e2e2e]">
+                  <h3 className="mt-1.5 font-display text-[22px] font-bold leading-tight tracking-[-0.02em] text-[#2e2e2e]">
                     {person.name}
                   </h3>
                   <p className="mt-2.5 text-[14px] leading-[1.6] text-[#807e7e]">{person.bio}</p>
@@ -880,7 +880,7 @@ export function AboutPage({
               Chapter Two starts now
             </span>
 
-            <h2 className="mt-6 font-serif-display text-[clamp(2.5rem,5vw,4.25rem)] font-normal leading-[1.04] tracking-[-0.025em] text-white">
+            <h2 className="mt-6 font-display text-[clamp(2.1rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white">
               Throw the night{' '}
               <span className="italic text-[#ff8a47]">the continent will talk about.</span>
             </h2>

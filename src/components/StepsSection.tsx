@@ -10,7 +10,7 @@ export function StepsSection() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Header */}
         <div className="mx-auto max-w-[588px] text-center">
-          <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+          <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
             Three Steps. <span className="text-[#ff5200]">Zero Friction.</span>
           </h2>
           <p className="mt-2 text-[16px] leading-[24px] text-[#807e7e]">
@@ -52,11 +52,11 @@ export function StepsSection() {
               key={`${audience}-${step.number}`}
               className="flex min-h-[222px] flex-col justify-between rounded-[24px] border-[0.5px] border-[#e7e5e5] bg-white p-6"
             >
-              <span className="font-serif-display text-[64px] leading-[72px] text-[#ff5200]">
+              <span className="font-display text-[48px] font-bold leading-none tracking-[-0.04em] text-[#ff5200]">
                 {step.number}
               </span>
               <div className="mt-6 flex flex-col gap-2">
-                <h3 className="font-serif-display text-[24px] leading-[30px] tracking-[-0.24px] text-[#2e2e2e]">
+                <h3 className="font-display text-[20px] font-semibold leading-[28px] tracking-[-0.02em] text-[#2e2e2e]">
                   {step.title}
                 </h3>
                 <p className="text-[14px] leading-[20px] text-[#807e7e]">{step.description}</p>

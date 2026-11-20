@@ -11,7 +11,7 @@ export function ProducersSection({ onOpenCreateModal }: ProducersSectionProps) {
         {/* Left Column */}
         <div className="flex max-w-[588px] flex-col items-start gap-12">
           <div className="flex flex-col gap-4">
-            <h2 className="font-serif-display text-[44px] font-normal leading-[1.12] text-[#2e2e2e] sm:text-[64px] sm:leading-[72px]">
+            <h2 className="font-display text-[34px] font-bold leading-[1.12] tracking-[-0.03em] text-[#2e2e2e] sm:text-[48px] sm:leading-[1.08] sm:tracking-[-0.035em]">
               The platform your <em className="italic text-[#ff5200]">producers</em> have been asking
               for.
             </h2>
